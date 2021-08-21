@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="static/assets/js/echarts.min.js"></script>
+    <title>test</title>
+     <link rel="stylesheet" href="../static/before/css/wodry.css">
+    <link rel="stylesheet" href="../static/before/css/index.css">
+    <link rel="stylesheet" href="../static/before/css/public.css">
+<script src="../static/before/js/echarts.min.js"></script>
+    <script src="../static/before/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.myscroll').myScroll({
+                speed: 60, //数值越大，速度越慢
+                rowHeight: 38 //li的高度
+            });
+        });
+
+        $(document).ready(function () {
+            var whei = $(window).width()
+            $("html").css({ fontSize: whei / 22 });
+            $(window).resize(function () {
+                var whei = $(window).width();
+                $("html").css({ fontSize: whei / 22 })
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <div class="header-left fl" id="time"></div>
+        <div class="header-center fl">
+            <div class="header-title">
+                test
+            </div>
+            <div class="header-img"></div>
+        </div>
+        <div class="header-right fl"></div>
+        <div class="header-bottom fl"></div>
+
+    </div>
+
+    <div class="center">
+        <div class="center-left fl">
+            <div class="left-top rightTop border">
+                <!--<h1 id="ceshi">数据可视化</h1>-->
+                <div class="title">基本信息</div>
+                <div class="top-list">
+
+                </div>
+
+            </div>
+            <div class="left-cen rightTop border">
+                <div class="title">包裹量排名</div>
+
+                <ul class="company" id="ceshi">
+
+                </ul>
+
+            </div>
+            <div class="left-bottom rightTop border">
+                <div class="title">商品分类占比</div>
+                <div class="bottom-b">
+{#                    <div id="chart3" class="allnav"></div>#}
+                </div>
+
+            </div>
+        </div>
+        <div class="center-cen fl">
+            <div class="cen-top rightTop border">
+                <div class="top-title">
+                    <ul>
+
+                    </ul>
+                </div>
+
+                <div class="top-bottom">
+                    <div id="map" class="allnav" style="height: 4.4rem"></div>
+                </div>
+
+
+            </div>
+            <div class="cen-bottom rightTop border">
+                <div class="title">月统计</div>
+                <div class="bottom-b">
+{#                    <div id="chart4" class="allnav"></div>#}
+
+                </div>
+
+            </div>
+        </div>
+        <div class="center-right fr">
+            <div class="right-top rightTop border">
+                <div class="title">商品销售排行</div>
+
+
+
+            </div>
+            <div class="right-cen border">
+                <div class="title">各平台占比</div>
+                <div class="right-cen-cent">
+                    <div id="chart2" class="allnav"></div>
+                </div>
+
+            </div>
+            <div class="right-bottom rightTop border">
+                <div class="title">全球贸易国家城市排行</div>
+                <div class="chat">
+                    <div id="chart5" class="allnav"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script>
+
+    var chartDom = document.getElementById('ffff');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    title: {
+        text: '某站点用户访问来源',
+        subtext: '纯属虚构',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [
+                {value: 1048, name: '搜索引擎'},
+                {value: 735, name: '直接访问'},
+                {value: 580, name: '邮件营销'},
+                {value: 484, name: '联盟广告'},
+                {value: 300, name: '视频广告'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+</script>
+
+<script src="../static/before/js/jquery.min.js"></script>
+<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+<script src="../static/before/js/wodry.min.js"></script>
+<script src="../static/before/js/fontscroll.js"></script>
+<script src="../static/before/js/echarts.js"></script>
+<script src="../static/before/js/china.js"></script>
+
+</body>
+</html>

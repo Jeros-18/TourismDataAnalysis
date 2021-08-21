@@ -9,7 +9,7 @@ $(function () {
 
 
 
-
+// 1 右2
     function ceshis1() {
         var myChart = echarts.init(document.getElementById('chart2'));
 
@@ -182,6 +182,7 @@ $(function () {
             myChart.resize();
         });
     }
+    // 2 左3
     function ceshis2() {
         var myChart = echarts.init(document.getElementById('chart3'));
 

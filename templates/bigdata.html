@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="static/assets/js/echarts.min.js"></script>
     <title>数据展示</title>
-    <link rel="stylesheet" href="../static/before/css/wodry.css">
+     <link rel="stylesheet" href="../static/before/css/wodry.css">
     <link rel="stylesheet" href="../static/before/css/index.css">
     <link rel="stylesheet" href="../static/before/css/public.css">
-
+<script src="../static/before/js/echarts.min.js"></script>
     <script src="../static/before/js/jquery.min.js"></script>
     <script>
         $(function () {
@@ -120,6 +121,7 @@
                 <div class="title">月统计</div>
                 <div class="bottom-b">
                     <div id="chart4" class="allnav"></div>
+{#                     <div id="ffff"  class="allnav"></div>#}
                 </div>
 
             </div>
@@ -343,9 +345,9 @@
     function fillZero(str){
         var realNum;
         if(str<10){
-            realNum	= '0'+str;
+            realNum    = '0'+str;
         }else{
-            realNum	= str;
+            realNum    = str;
         }
         return realNum;
     }

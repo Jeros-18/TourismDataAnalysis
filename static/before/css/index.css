@@ -356,7 +356,7 @@
 
 }
 #FontScroll ul li:hover{
-    box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/
+    box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影 选中时候的颜色*/
     10px 0px 15px #034c6a inset;
     cursor: pointer;
 }

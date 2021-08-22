@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="../static/before/js/echarts.min.js"></script>
-    <title>test</title>
+    <title>旅游大数据展示</title>
      <link rel="stylesheet" href="../static/before/css/wodry.css">
     <link rel="stylesheet" href="../static/before/css/index.css">
     <link rel="stylesheet" href="../static/before/css/public.css">
@@ -34,7 +34,7 @@
         <div class="header-left fl" id="time"></div>
         <div class="header-center fl">
             <div class="header-title">
-                test
+                旅游大数据展示
             </div>
             <div class="header-img"></div>
         </div>
@@ -49,7 +49,7 @@
                 <!--<h1 id="ceshi">数据可视化</h1>-->
                 <div class="title">基本信息</div>
                 <div class="top-list">
-
+                    <div id="www" style="width: 50%;height:300px"></div>
                 </div>
 
             </div>
@@ -57,7 +57,7 @@
                 <div class="title">包裹量排名</div>
 
                 <ul class="company" id="ceshi">
-
+                     <div id="main" style="width: 100%;height:300px"></div>
                 </ul>
 
             </div>
@@ -87,37 +87,253 @@
                 <div class="title">月统计</div>
                 <div class="bottom-b">
 {#                    <div id="chart4" class="allnav"></div>#}
-
+                    <div id="ffff" class="allnav"></div>
                 </div>
 
             </div>
         </div>
         <div class="center-right fr">
             <div class="right-top rightTop border">
-                <div class="title">商品销售排行</div>
+                <div class="title">旅行社人流量排行</div>
 
-
-
-            </div>
-            <div class="right-cen border">
-                <div class="title">各平台占比</div>
-                <div class="right-cen-cent">
-                    <div id="chart2" class="allnav"></div>
-                </div>
-
-            </div>
-            <div class="right-bottom rightTop border">
-                <div class="title">全球贸易国家城市排行</div>
-                <div class="chat">
-                    <div id="chart5" class="allnav"></div>
-                </div>
-
-            </div>
+                 <div class="echart wenzi">
+                                    <div class="gun">
+                                    <span>排名</span>
+                                    <span>旅行社名称</span>
+                                    <span>人流量</span>
+                                </div>
+                                    <div id="FontScroll" class="myscroll">
+                                         <ul>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>1</b>
+            </span>
+            <span>湖南嗨周末国际</span>
+            <span>34865</span>
         </div>
-    </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>2</b>
+            </span>
+            <span>长沙幸福时光国际</span>
+            <span>13523</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>3</b>
+            </span>
+            <span>湖南新麦乐国际</span>
+            <span>11692</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>4</b>
+            </span>
+            <span>湖南益阳平安国际</span>
+            <span>8964</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>5</b>
+            </span>
+            <span>株洲市火车头旅行社</span>
+            <span>6881</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>6</b>
+            </span>
+            <span>岳阳宝中旅游国际</span>
+            <span>6811</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>7</b>
+            </span>
+            <span>岳阳康辉国际</span>
+            <span>5387</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>8</b>
+            </span>
+            <span>湘潭潇湘风情</span>
+            <span>5101</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>9</b>
+            </span>
+            <span>湖南湘聚天下国际</span>
+            <span>4966</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>10</b>
+            </span>
+            <span>岳阳海航乐游国际</span>
+            <span>1169</span>
+
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>11</b>
+            </span>
+            <span>湖南研学旅文化传媒</span>
+            <span>827</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>衡阳市飞扬国际</span>
+            <span>798</span>
+
+        </div>
+    </li>
+
+</ul>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="right-cen border">
+                                <div class="title">各平台占比</div>
+                                <div class="right-cen-cent">
+                                    <div id="chart2" class="allnav"></div>
+                                </div>
+
+                            </div>
+                            <div class="right-bottom rightTop border">
+                                <div class="title">全球贸易国家城市排行</div>
+                                <div class="chat">
+                                    <div id="chart5" class="allnav"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
 
 </div>
+
+  <!-- 消费模块-消费金额 开始-->
+<script>
+    var chartDom = document.getElementById('www');
+var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+    title: {
+        text: '团队主要消费分部情况',
+        subtext: '团队结算明细',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '业务模块',
+            type: 'pie',
+            radius: '50%',
+            data: [
+                {value: {{cateringTotal}}, name: '{{moduleName[0]}}'},
+                {value: {{guidTotal}}, name: '{{moduleName[1]}}'},
+                {value: {{hotelTotal}}, name: '{{moduleName[2]}}'},
+                {value: {{meetingTotal}}, name: '{{moduleName[3]}}'},
+                {value: {{otherTotal}}, name: '{{moduleName[4]}}'},
+                {value: {{partyTotal}}, name: '{{moduleName[5]}}'},
+                {value: {{ticketTotal}}, name: '{{moduleName[6]}}'},
+                {value: {{trainingTotal}}, name: '{{moduleName[7]}}'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+</script>
+  <!-- 消费模块-消费金额 结束-->
+
+ <script type="text/javascript">
+var dom = document.getElementById("main");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+
+    color:['#3398DB'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right:'4%',
+        bottom:'3%',
+        containLabel:true
+    },
+    xAxis: {
+        type: 'category',
+        data: {{ AGENT_ACCOUNTNAME }}
+        <!--['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','999']-->
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: {{ MAN }},
+            <!--[120, 20, 150, 80, 70, 110, 130,200],-->
+        barWidth:'60%',
+        type:'bar'
+    }]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+
 <script>
 
     var chartDom = document.getElementById('ffff');
@@ -169,6 +385,79 @@ option && myChart.setOption(option);
 <script src="../static/before/js/fontscroll.js"></script>
 <script src="../static/before/js/echarts.js"></script>
 <script src="../static/before/js/china.js"></script>
+<!--<script src="js/mymap.js"></script>-->
+<script>
+    /*$('#ceshi').wodry({
+
+        animation: 'rotateX',
+
+        delay: 1000,
+
+        animationDuration: 800
+
+    });*/
+    /*window.onload = function () {
+        setInterval(function () {
+            var hs=document.getElementById("ceshi");
+            var hstyle=hs.style.transform;
+            if(hstyle=='rotateX(-360deg)'){
+                //console.log(1)
+                hs.style.transform='rotateX(0deg)';
+                hs.style.transform='transform 500ms cubic-bezier(0.55, 0.18, 0.92, 0.46) 0s;'
+            }else {
+                hs.style.transform='rotateX(-360deg)';
+                hs.style.transition="all 2s";
+            }
+        }, 5000);
+    };*/
+    var counter = 3000;
+    var ulist=document.getElementById("ceshi").getElementsByTagName("li");
+    for (var i=0;i<ulist.length;i++){
+        //console.log(ulist[i].className);
+        var liclass=ulist[i].className;
+        var a= $('.'+liclass+'').wodry({
+            animation: 'rotateX',
+            delay: counter,
+            animationDuration: 1000
+        });
+        if(counter>3050){
+            counter=3000;
+        }else {
+            counter +=10;
+        }
+        //console.log(counter);
+
+    }
+
+    //顶部时间
+    function getTime(){
+        var myDate = new Date();
+        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+        var myToday = myDate.getDate(); //获取当前日(1-31)
+        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        var myHour = myDate.getHours(); //获取当前小时数(0-23)
+        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+        var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var nowTime;
+
+        nowTime = myYear+'-'+fillZero(myMonth)+'-'+fillZero(myToday)+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;';
+        //console.log(nowTime);
+        $('#time').html(nowTime);
+    };
+    function fillZero(str){
+        var realNum;
+        if(str<10){
+            realNum    = '0'+str;
+        }else{
+            realNum    = str;
+        }
+        return realNum;
+    }
+    setInterval(getTime,1000);
+
+</script>
 
 </body>
 </html>

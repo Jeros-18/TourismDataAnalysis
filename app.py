@@ -147,9 +147,8 @@ def naturePerson(natu,num):
         natu.append(i[0])
         num.append(i[1])
 
-# 景区排行榜
+# 旅行社区排行榜
 def bb(lastNamedict):
-   # wb = xlrd.open_workbook("templates/xls/团队预定订单数据.xls")
    wb = xlrd.open_workbook("templates/xls/aaa.xls")
    ws = wb.sheet_by_index(0)
    # print(ws.row_values(0))  # 每一行作为一个列表
@@ -167,23 +166,14 @@ def bb(lastNamedict):
             namedict[items[5]] += items[8]
          else:
             namedict.setdefault(items[5], items[8])
-   # print(namedict)
 
-   # print("-----------------sort-------------------")
    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-   # print(sortNamedict)
-
-
-
-
-   # print("-----------------前30个-------------------")
-   # 前20个
 
    for i in range(30):
       lastNamedict.append(sortNamedict[i])
-   # print(lastNamedict)
 
-# 地图展示
+
+# 地图展示  中国各省份人流量
 def map(province,nums):
     work = xlrd.open_workbook('templates/xls/地图.xls')
     sheet = work.sheets()[0]

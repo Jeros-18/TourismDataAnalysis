@@ -47,6 +47,52 @@ def ww():
        lastNamedict.append(sortNamedict[i])
    print(lastNamedict)
 
+# 地图展示 省份-人流量
+def map():
+    province=[]
+    nums=[]
+    work = xlrd.open_workbook('../templates/xls/地图.xls')
+    sheet = work.sheets()[0]
+    data = sheet.col_values(0)
+    tem = Counter(data)
+    fidata = sorted(tem.items(), key=lambda tem: tem[1], reverse=True)
+    print(fidata)
+    for i in fidata:
+        province.append(i[0])
+        nums.append(i[1])
+    lastNamedict = []
+    for i in range(17):
+        lastNamedict.append(fidata[i])
+    print(lastNamedict)
+
+# 旅行社区排行榜
+def lxingshe():
+   lastNamedict=[]
+   wb = xlrd.open_workbook("../templates/xls/aaa.xls")
+   ws = wb.sheet_by_index(0)
+   # print(ws.row_values(0))  # 每一行作为一个列表
+   total_list = []
+   for row in range(ws.nrows):
+      row_list = ws.row_values(row)
+      total_list.append(row_list)
+
+   namedict = {}
+   for items in total_list:
+      if items[5] == None or items[5] == "AGENT_ACCOUNTNAME":
+         continue
+      else:
+         if items[5] in namedict.keys():
+            namedict[items[5]] += items[8]
+         else:
+            namedict.setdefault(items[5], items[8])
+
+   sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+
+   for i in range(30):
+      lastNamedict.append(sortNamedict[i])
+   print(lastNamedict)
+
+
 # 消费模块占比
 def b():
     wb = xlrd.open_workbook("../templates/xls/团队结算明细.xls")
@@ -243,7 +289,7 @@ def naturePerson():
     # print(sortNamedict)
 
     lastNamedict = []
-    for i in range(30):
+    for i in range(32):
         lastNamedict.append(sortNamedict[i])
     print(lastNamedict)
 
@@ -252,4 +298,4 @@ if __name__ == '__main__':
     # zz()
     # payMoney()
     # ww()
-    naturePerson();
+    payMoney();

@@ -11,177 +11,177 @@ $(function () {
 
 // 1 右2
     function ceshis1() {
-        var myChart = echarts.init(document.getElementById('chart2'));
+    var myChart = echarts.init(document.getElementById('chart2'));
 
-        var ydata = [{
-            name: '天猫',
-            value: 18
+    var ydata = [{
+        name: '旅游',
+        value: 6397906
+    },
+        {
+            name: '餐饮',
+            value: 5067667
         },
-            {
-                name: '京东',
-                value: 16
-            },
-            {
-                name: '苏宁易购',
-                value: 15
-            },
-            {
-                name: '拼多多',
-                value: 14
-            },
-            {
-                name: '国美',
-                value: 10
-            },
-            {
-                name: '亚马逊',
-                value: 7.9
-            },
-            {
-                name: '唯品会',
-                value: 6.7
-            },
-            {
-                name: '其他',
-                value: 6
-            }
-        ];
-        var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
-        var xdata = ['天猫', "京东", "苏宁易购", "拼多多", '国美', '亚马逊', '唯品会', '唯品会'];
+        {
+            name: '培训',
+            value: 3219527
+        },
+        {
+            name: '住宿',
+            value: 2434472
+        },
+        {
+            name: '其他',
+            value: 920166
+        },
+        {
+            name: '会议',
+            value: 658691
+        },
+        {
+            name: '晚会',
+            value: 235388
+        },
+        {
+            name: '导游',
+            value: 68050
+        }
+    ];
+    var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
+    var xdata = ['旅游', "餐饮", "培训", "住宿", '其他', '会议', '晚会', '导游'];
 
 
-        option = {
-            /*backgroundColor: "rgba(255,255,255,1)",*/
-            color: color,
-            legend: {
-                orient: "vartical",
-                x: "left",
-                top: "center",
-                left: "53%",
-                bottom: "0%",
-                data: xdata,
-                itemWidth: 8,
-                itemHeight: 8,
-                textStyle: {
-                    color: '#fff'
-                },
-                /*itemGap: 16,*/
-                /*formatter:function(name){
-                  var oa = option.series[0].data;
-                  var num = oa[0].value + oa[1].value + oa[2].value + oa[3].value+oa[4].value + oa[5].value + oa[6].value + oa[7].value+oa[8].value + oa[9].value ;
-                  for(var i = 0; i < option.series[0].data.length; i++){
-                      if(name==oa[i].name){
-                          return ' '+name + '    |    ' + oa[i].value + '    |    ' + (oa[i].value/num * 100).toFixed(2) + '%';
-                      }
+    option = {
+        /*backgroundColor: "rgba(255,255,255,1)",*/
+        color: color,
+        legend: {
+            orient: "vartical",
+            x: "left",
+            top: "center",
+            left: "53%",
+            bottom: "0%",
+            data: xdata,
+            itemWidth: 8,
+            itemHeight: 8,
+            textStyle: {
+                color: '#fff'
+            },
+            /*itemGap: 16,*/
+            /*formatter:function(name){
+              var oa = option.series[0].data;
+              var num = oa[0].value + oa[1].value + oa[2].value + oa[3].value+oa[4].value + oa[5].value + oa[6].value + oa[7].value+oa[8].value + oa[9].value ;
+              for(var i = 0; i < option.series[0].data.length; i++){
+                  if(name==oa[i].name){
+                      return ' '+name + '    |    ' + oa[i].value + '    |    ' + (oa[i].value/num * 100).toFixed(2) + '%';
                   }
-                }*/
+              }
+            }*/
 
-                formatter: function(name) {
-                    return '' + name
-                }
-            },
-            series: [{
-                type: 'pie',
-                clockwise: false, //饼图的扇区是否是顺时针排布
-                minAngle: 2, //最小的扇区角度（0 ~ 360）
-                radius: ["20%", "60%"],
-                center: ["30%", "45%"],
-                avoidLabelOverlap: false,
-                itemStyle: { //图形样式
-                    normal: {
-                        borderColor: '#ffffff',
-                        borderWidth: 1,
-                    },
+            formatter: function(name) {
+                return '' + name
+            }
+        },
+        series: [{
+            type: 'pie',
+            clockwise: false, //饼图的扇区是否是顺时针排布
+            minAngle: 2, //最小的扇区角度（0 ~ 360）
+            radius: ["20%", "60%"],
+            center: ["30%", "45%"],
+            avoidLabelOverlap: false,
+            itemStyle: { //图形样式
+                normal: {
+                    borderColor: '#ffffff',
+                    borderWidth: 1,
                 },
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'center',
-                        formatter: '{text|{b}}\n{c} ({d}%)',
-                        rich: {
-                            text: {
-                                color: "#fff",
-                                fontSize: 14,
-                                align: 'center',
-                                verticalAlign: 'middle',
-                                padding: 8
-                            },
-                            value: {
-                                color: "#8693F3",
-                                fontSize: 24,
-                                align: 'center',
-                                verticalAlign: 'middle',
-                            },
-                        }
-                    },
-                    emphasis: {
-                        show: true,
-                        textStyle: {
+            },
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center',
+                    formatter: '{text|{b}}\n{c} ({d}%)',
+                    rich: {
+                        text: {
+                            color: "#fff",
+                            fontSize: 14,
+                            align: 'center',
+                            verticalAlign: 'middle',
+                            padding: 8
+                        },
+                        value: {
+                            color: "#8693F3",
                             fontSize: 24,
-                        }
+                            align: 'center',
+                            verticalAlign: 'middle',
+                        },
                     }
                 },
-                data: ydata
-            }]
-        };
-        myChart.setOption(option);
-
-        setTimeout(function() {
-            myChart.on('mouseover', function(params) {
-                if (params.name == ydata[0].name) {
-                    myChart.dispatchAction({
-                        type: 'highlight',
-                        seriesIndex: 0,
-                        dataIndex: 0
-                    });
-                } else {
-                    myChart.dispatchAction({
-                        type: 'downplay',
-                        seriesIndex: 0,
-                        dataIndex: 0
-                    });
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: 24,
+                    }
                 }
-            });
+            },
+            data: ydata
+        }]
+    };
+    myChart.setOption(option);
 
-            myChart.on('mouseout', function(params) {
+    setTimeout(function() {
+        myChart.on('mouseover', function(params) {
+            if (params.name == ydata[0].name) {
                 myChart.dispatchAction({
                     type: 'highlight',
                     seriesIndex: 0,
                     dataIndex: 0
                 });
-            });
+            } else {
+                myChart.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: 0
+                });
+            }
+        });
+
+        myChart.on('mouseout', function(params) {
             myChart.dispatchAction({
                 type: 'highlight',
                 seriesIndex: 0,
                 dataIndex: 0
             });
-        }, 1000);
-
-        myChart.currentIndex = -1;
-
-        setInterval(function () {
-            var dataLen = option.series[0].data.length;
-            // 取消之前高亮的图形
-            myChart.dispatchAction({
-                type: 'downplay',
-                seriesIndex: 0,
-                dataIndex: myChart.currentIndex
-            });
-            myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
-            // 高亮当前图形
-            myChart.dispatchAction({
-                type: 'highlight',
-                seriesIndex: 0,
-                dataIndex: myChart.currentIndex
-            });
-        }, 1000);
-
-        // 使用刚指定的配置项和数据显示图表。
-        /*myChart.setOption(option);*/
-        window.addEventListener("resize",function(){
-            myChart.resize();
         });
-    }
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: 0
+        });
+    }, 1000);
+
+    myChart.currentIndex = -1;
+
+    setInterval(function () {
+        var dataLen = option.series[0].data.length;
+        // 取消之前高亮的图形
+        myChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: myChart.currentIndex
+        });
+        myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
+        // 高亮当前图形
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: myChart.currentIndex
+        });
+    }, 1000);
+
+    // 使用刚指定的配置项和数据显示图表。
+    /*myChart.setOption(option);*/
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+}
     // 2 左3
     function ceshis2() {
         var myChart = echarts.init(document.getElementById('chart3'));

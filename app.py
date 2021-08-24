@@ -88,9 +88,9 @@ def test():
     bb(lastNamedict)
 
     # 地图展示
-    province = []
-    nums = []
-    map(province, nums)
+    province=[]
+    nums=[]
+    map(province,nums)
 
     return render_template("test.html", moduleName=moduleName, cateringTotal=cateringTotal,
                            guidTotal=guidTotal,
@@ -102,7 +102,10 @@ def test():
 
 @app.route('/a')
 def a():
-    return render_template("a.html")
+    province = []
+    nums = []
+    map(province, nums)
+    return render_template("a.html",province=province,nums=nums)
 
 # 景区排行榜
 def bb(lastNamedict):
@@ -141,7 +144,7 @@ def bb(lastNamedict):
    # print(lastNamedict)
 
 # 地图展示
-def map(province, nums):
+def map(province,nums):
     work = xlrd.open_workbook('templates/xls/地图.xls')
     sheet = work.sheets()[0]
     data = sheet.col_values(0)

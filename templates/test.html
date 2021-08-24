@@ -289,11 +289,11 @@ option && myChart.setOption(option);
         var myEcharts = echarts.init(document.getElementById("box22"));
         var option = {
             title: {  //标题样式
-                text: 'ECharts 中国地图',
+                text: '中国各省旅游人流量分布',
                 x: "center",
                 textStyle: {
                     fontSize: 18,
-                    color: "red"
+                    color: "blue"
                 },
             },
             tooltip: {  //这里设置提示框
@@ -316,7 +316,7 @@ option && myChart.setOption(option);
             },
             series: [
                 {
-                    name: '模拟数据',
+                    name: '人流量',
                     type: 'map',
                     mapType: 'china',
                     roam: false,//是否开启鼠标缩放和平移漫游
@@ -336,27 +336,43 @@ option && myChart.setOption(option);
                     },
                     top: "3%",//组件距离容器的距离
                     data: [
-                        { name: '北京', value: 350000 },
-                        { name: '天津', value: 120000 },
-                        { name: '上海', value: 300000 },
-                        { name: '重庆', value: 92000 },
-                        { name: '河北', value: 25000 },
-                        { name: '河南', value: 20000 },
-                        { name: '云南', value: 500 },
-                        { name: '辽宁', value: 3050 },
-                        { name: '黑龙江', value: 80000 },
-                        { name: '湖南', value: 2000 },
-                        { name: '安徽', value: 24580 },
-                        { name: '山东', value: 40629 },
-                        { name: '新疆', value: 36981 },
-                        { name: '江苏', value: 13569 },
-                        { name: '浙江', value: 24956 },
-                        { name: '江西', value: 15194 },
-                        { name: '湖北', value: 41398 },
-                        { name: '广西', value: 41150 },
-                        { name: '甘肃', value: 17630 },
-                        { name: '山西', value: 27370 },
-                        { name: '内蒙古', value: 27370 },
+
+                            { name: '湖南', value: 54148 },
+                        { name: '江西', value: 6854 },
+                        { name: '湖北', value: 1213 },
+                        { name: '河南', value: 495 },
+                        { name: '四川', value: 413 },
+                        { name: '广东', value: 344 },
+                        { name: '贵州', value: 233 },
+                        { name: '安徽', value: 216 },
+                        { name: '河北', value: 195 },
+
+                        { name: '陕西', value: 186 },
+                        { name: '江苏', value: 182 },
+                        { name: '福建', value: 172 },
+                        { name: '浙江', value: 159 },
+                        { name: '山东', value: 153 },
+                        { name: '甘肃', value: 109 },
+
+                        { name: '山西', value: 105 },
+                        { name: '辽宁', value: 97 },
+                        { name: '云南', value: 92 },
+                        { name: '吉林', value: 91 },
+                        { name: '青海', value: 48 },
+                        { name: '海南', value: 30 },
+
+                        { name: '新疆', value: 0 },
+                        { name: '西藏', value: 0 },
+                        { name: '内蒙古', value: 0 },
+                        { name: '黑龙江', value: 0 },
+                        { name: '宁夏', value: 0 },
+                        { name: '广西', value: 0 },
+                        { name: '北京', value: 0 },
+                        { name: '天津', value: 0 },
+                        { name: '重庆', value: 0 },
+
+
+
 
                     ]
                 }

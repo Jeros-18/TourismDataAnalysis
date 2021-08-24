@@ -85,9 +85,9 @@
 
             </div>
             <div class="left-bottom rightTop border">
-                <div class="title">商品分类占比</div>
+                <div class="title">旅游团队类型占比</div>
                 <div class="bottom-b">
-{#                    <div id="chart3" class="allnav"></div>#}
+                    <div id="chart3" class="allnav"></div>
                 </div>
 
             </div>
@@ -98,10 +98,11 @@
             </div>
             <div class="cen-bottom rightTop border">
                 <div class="title">月统计</div>
-                <div class="bottom-b">
+{#                <div class="bottom-b">#}
 {#                    <div id="chart4" class="allnav"></div>#}
-                    <div id="ffff" class="allnav"></div>
-                </div>
+{#                    <div id="ffff" class="allnav"></div>#}
+{#                </div>#}
+                <div id="ffff"></div>#}
 
             </div>
         </div>
@@ -244,7 +245,7 @@
 
                             </div>
                             <div class="right-bottom rightTop border">
-                                <div class="title">全球贸易国家城市排行</div>
+                                <div class="title">旅游景区人流量排行</div>
                                 <div class="chat">
                                     <div id="chart5" class="allnav"></div>
                                 </div>
@@ -322,7 +323,7 @@ option && myChart.setOption(option);
                 trigger: 'item',  //数据项图形触发
                 backgroundColor: "red",  //提示框浮层的背景颜色。
                 //字符串模板(地图): {a}（系列名称），{b}（区域名称），{c}（合并数值）,{d}（无）
-                formatter: '地区：{b}<br/>模拟数据：{c}'
+                formatter: '地区：{b}<br/>人流量：{c}'
             },
             visualMap: {//视觉映射组件
                 top: 'center',

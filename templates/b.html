@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>地图分布动画特效</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="main" style="width: 800px; height: 800px;"></div>
+
+    <script>
+        var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+    legend: {
+        top: 'bottom'
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    series: [
+        {
+            name: '面积模式',
+            type: 'pie',
+            radius: [50, 250],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            itemStyle: {
+                borderRadius: 8
+            },
+            data: [
+                {value: {{ num[0] }}, name: '{{ natu[0] }}'},
+                {value: {{ num[1] }}, name: '{{ natu[1] }}'},
+                {value: {{ num[2] }}, name: '{{ natu[2] }}'},
+                {value: {{ num[3] }}, name: '{{ natu[2] }}'},
+                {value: {{ num[4] }}, name: '{{ natu[4] }}'},
+                {value: {{ num[5] }}, name: '{{ natu[5] }}'},
+                {value: {{ num[6] }}, name: '{{ natu[6] }}'},
+                {value: {{ num[7] }}, name: '{{ natu[7] }}'},
+                {value: {{ num[8] }}, name: '{{ natu[8] }}'},
+                {value: {{ num[9] }}, name: '{{ natu[9] }}'},
+                {value: {{ num[10] }}, name: '{{ natu[10] }}'},
+
+
+
+            ]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+    </script>
+</body>
+
+</html>

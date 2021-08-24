@@ -107,6 +107,46 @@ def a():
     map(province, nums)
     return render_template("a.html",province=province,nums=nums)
 
+@app.route('/b')
+def b():
+    natu=[]
+    num=[]
+    naturePerson(natu,num)
+    return render_template("b.html",natu=natu,num=num)
+
+# 各个景区的人流量
+def naturePerson(natu,num):
+    wb = xlrd.open_workbook("templates/xls/团队预定订单旅游板块明细数据.xls")
+    ws = wb.sheet_by_index(0)
+    # print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+    # print(total_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[1] == None or items[1] == "TICKETGROUP_NAME":
+            continue
+        else:
+            if items[1] in namedict.keys():
+                namedict[items[1]] += items[3]
+            else:
+                namedict.setdefault(items[1], items[3])
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+    # print(sortNamedict)
+
+    lastNamedict = []
+    for i in range(30):
+        lastNamedict.append(sortNamedict[i])
+    # print(lastNamedict)
+
+    for i in lastNamedict:
+        natu.append(i[0])
+        num.append(i[1])
+
 # 景区排行榜
 def bb(lastNamedict):
    # wb = xlrd.open_workbook("templates/xls/团队预定订单数据.xls")

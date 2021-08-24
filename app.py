@@ -87,13 +87,24 @@ def test():
     lastNamedict=[]
     bb(lastNamedict)
 
+    # 地图展示
+    province = []
+    nums = []
+    map(province, nums)
+
     return render_template("test.html", moduleName=moduleName, cateringTotal=cateringTotal,
                            guidTotal=guidTotal,
                            ticketTotal=ticketTotal, hotelTotal=hotelTotal, meetingTotal=meetingTotal,
                            otherTotal=otherTotal, partyTotal=partyTotal, trainingTotal=trainingTotal,
-                           lastNamedict=lastNamedict)
+                           lastNamedict=lastNamedict,
+                           province=province,nums=nums)
 
 
+@app.route('/a')
+def a():
+    return render_template("a.html")
+
+# 景区排行榜
 def bb(lastNamedict):
    # wb = xlrd.open_workbook("templates/xls/团队预定订单数据.xls")
    wb = xlrd.open_workbook("templates/xls/aaa.xls")
@@ -129,8 +140,17 @@ def bb(lastNamedict):
       lastNamedict.append(sortNamedict[i])
    # print(lastNamedict)
 
+# 地图展示
+def map(province, nums):
+    work = xlrd.open_workbook('templates/xls/地图.xls')
+    sheet = work.sheets()[0]
+    data = sheet.col_values(0)
+    tem = Counter(data)
+    fidata = sorted(tem.items(), key=lambda tem: tem[1], reverse=True)
 
-
+    for i in fidata:
+        province.append(i[0])
+        nums.append(i[1])
 
 
 

@@ -122,7 +122,7 @@ def b():
     # print("-----------------前30个-------------------")
     # 前20个
 
-# 不同支付方式使用频率情况
+# 不同支付方式使用频率情况 【【【【
 def payNum1():
     wb = xlrd.open_workbook('../templates/xls/团队结算支付明细.xls')
     sheet = wb.sheets()[0]
@@ -163,7 +163,7 @@ def payNum2():
    print(num)
 
 
-# 不同支付方式消费金额情况
+# 不同支付方式消费金额情况  【【【
 def payMoney():
     wb = xlrd.open_workbook('../templates/xls/团队结算支付明细.xls')
     ws = wb.sheet_by_index(0)
@@ -188,7 +188,7 @@ def payMoney():
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
     print(sortNamedict)
 
-# 餐厅人流量
+# 餐厅人流量【【【
 def hangPerson():
     wb = xlrd.open_workbook('../templates/xls/团队预定订单餐饮板块明细数据.xls')
     ws = wb.sheet_by_index(0)
@@ -209,7 +209,7 @@ def hangPerson():
                 namedict.setdefault(items[4], items[7])
 
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-    # print(sortNamedict)
+    print(sortNamedict)
 
     lastNamedict = []
     for i in range(6):
@@ -236,8 +236,13 @@ def roomNum():
             else:
                 namedict.setdefault(items[3], 1)
 
-    print(namedict) # {'ROOMNAME': 1, '多功能厅': 721, '一号会议室': 249, '山庄会议室': 611, '金茂厅': 683, '六号会议室': 296, '阳光厅': 227, '石燕厅': 371, '香樟厅':
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
 
+    print(sortNamedict) # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
+    lastNamedict=[]
+    for i in range(12):
+      lastNamedict.append(sortNamedict[i])
+    print(lastNamedict)
 
 # 每个会议室的总营业额 有bug
 def roomMoney():
@@ -345,9 +350,40 @@ def monbb():
     c1 = ws.cell(1, 2).value
     print(c1)
 
+# 拓展项目预约次数
+def tuoZhan():
+    wb = xlrd.open_workbook("../templates/xls/团队预定订单拓展培训板块明细数据.xls")
+    ws = wb.sheet_by_index(0)
+    print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[3] == None or items[3] == "PAY_TYPE_NAME":
+            continue
+        else:
+            if items[3] in namedict.keys():
+                namedict[items[3]] += 1
+            else:
+                namedict.setdefault(items[3], 1)
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+
+    print(
+        sortNamedict)  # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
+    lastNamedict = []
+    for i in range(12):
+        lastNamedict.append(sortNamedict[i])
+    print(lastNamedict)
+
 if __name__ == '__main__':
     # payNum2();
     # zz()
     # payMoney()
     # ww()
+    tuoZhan();
+    roomNum();
     hangPerson();

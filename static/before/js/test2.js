@@ -2,6 +2,7 @@ $(function () {
 
     /*ceshis();*/
     ceshis1();
+     ceshis2();
 
 
 
@@ -180,9 +181,9 @@ $(function () {
         myChart.resize();
     });
 }
-    // 2 左3
+    // 绿色饼图
     function ceshis2() {
-    var myChart = echarts.init(document.getElementById('chart3'));
+    var myChart = echarts.init(document.getElementById('canting'));
 
     option = {
         /*backgroundColor: '#000',*/
@@ -218,7 +219,7 @@ $(function () {
             "bottom": "0",
             "padding": [15, 20],
             "itemGap": 5,
-            "data": ["招待", "同行", "电脑", "散客班", "总代", "直客"]
+            "data": ["融景餐厅", "金茂酒店", "古堡餐厅", "土菜馆", "活鱼村", "陶令餐厅"]
         },
         "series": [{
             "type": "pie",
@@ -309,20 +310,24 @@ $(function () {
                 }
             },
             "data": [{
-                "name": "招待",
-                "value": 83
+                "name": "融景餐厅",
+                "value": 116211
             }, {
-                "name": "同行",
-                "value": 1447
+                "name": "金茂酒店",
+                "value": 33679
             }, {
-                "name": "散客班",
-                "value": 2062
+                "name": "古堡餐厅",
+                "value": 15499
             }, {
-                "name": "总代",
-                "value": 23114
+                "name": "土菜馆",
+                "value": 13487
             }, {
-                "name": "直客",
-                "value": 38830
+                "name": "活鱼村",
+                "value": 9639
+            },
+            {
+                "name": "陶令餐厅",
+                "value": 6304
             }]
         }, {
             "type": "pie",

@@ -6,7 +6,7 @@ $(function () {
     ceshis3();
     ceshis4();
     ceshis5();
-
+    ceshis6();
 
 
 // 1 右2
@@ -1917,6 +1917,179 @@ $(function () {
         });
     }
 
+function ceshis6() {
+    var myChart = echarts.init(document.getElementById('chart7'));
+
+    var ydata = [{
+        name: '刷卡',
+        value: 19721339
+    },
+        {
+            name: '转账',
+            value: 13872906.5
+        },
+        {
+            name: '微信',
+            value: 12299311
+        },
+        {
+            name: '收银宝',
+            value: 8377346.5
+        },
+        {
+            name: 'Q支付',
+            value: 8114259.5
+        },
+        {
+            name: '支付宝',
+            value: 2938239.5
+        },
+        {
+            name: '中信全付通',
+            value: 2423104
+        },
+        {
+            name: '定金',
+            value: 1148041
+        },
+
+    ];
+    var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
+    var xdata = ['刷卡', "转账", "微信", "收银宝", 'Q支付', '支付宝', '中信全付通', '定金'];
+
+
+    option = {
+        /*backgroundColor: "rgba(255,255,255,1)",*/
+        color: color,
+        legend: {
+            orient: "vartical",
+            x: "left",
+            top: "center",
+            left: "53%",
+            bottom: "0%",
+            data: xdata,
+            itemWidth: 8,
+            itemHeight: 8,
+            textStyle: {
+                color: '#fff'
+            },
+            /*itemGap: 16,*/
+            /*formatter:function(name){
+              var oa = option.series[0].data;
+              var num = oa[0].value + oa[1].value + oa[2].value + oa[3].value+oa[4].value + oa[5].value + oa[6].value + oa[7].value+oa[8].value + oa[9].value ;
+              for(var i = 0; i < option.series[0].data.length; i++){
+                  if(name==oa[i].name){
+                      return ' '+name + '    |    ' + oa[i].value + '    |    ' + (oa[i].value/num * 100).toFixed(2) + '%';
+                  }
+              }
+            }*/
+
+            formatter: function(name) {
+                return '' + name
+            }
+        },
+        series: [{
+            type: 'pie',
+            clockwise: false, //饼图的扇区是否是顺时针排布
+            minAngle: 2, //最小的扇区角度（0 ~ 360）
+            radius: ["20%", "60%"],
+            center: ["30%", "45%"],
+            avoidLabelOverlap: false,
+            itemStyle: { //图形样式
+                normal: {
+                    borderColor: '#ffffff',
+                    borderWidth: 1,
+                },
+            },
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center',
+                    formatter: '{text|{b}}\n{c} ({d}%)',
+                    rich: {
+                        text: {
+                            color: "#fff",
+                            fontSize: 14,
+                            align: 'center',
+                            verticalAlign: 'middle',
+                            padding: 8
+                        },
+                        value: {
+                            color: "#8693F3",
+                            fontSize: 24,
+                            align: 'center',
+                            verticalAlign: 'middle',
+                        },
+                    }
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: 24,
+                    }
+                }
+            },
+            data: ydata
+        }]
+    };
+    myChart.setOption(option);
+
+    setTimeout(function() {
+        myChart.on('mouseover', function(params) {
+            if (params.name == ydata[0].name) {
+                myChart.dispatchAction({
+                    type: 'highlight',
+                    seriesIndex: 0,
+                    dataIndex: 0
+                });
+            } else {
+                myChart.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: 0
+                });
+            }
+        });
+
+        myChart.on('mouseout', function(params) {
+            myChart.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: 0
+            });
+        });
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: 0
+        });
+    }, 1000);
+
+    myChart.currentIndex = -1;
+
+    setInterval(function () {
+        var dataLen = option.series[0].data.length;
+        // 取消之前高亮的图形
+        myChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: myChart.currentIndex
+        });
+        myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
+        // 高亮当前图形
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: myChart.currentIndex
+        });
+    }, 1000);
+
+    // 使用刚指定的配置项和数据显示图表。
+    /*myChart.setOption(option);*/
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+}
 
 
 

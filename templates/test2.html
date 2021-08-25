@@ -48,8 +48,19 @@
     <div class="center">
         <div class="center-left fl">
             <div class="left-top rightTop border">
-                <div class="title">餐厅人流量排名</div>
-
+                <div class="title">基本信息</div>
+                <div class="top-list">
+                    <p>生活不止眼前的苟且，还有诗和远方</p>
+                    <ul>
+                        <li>热门餐厅：6个</li> {# 餐厅人流量在6000以上 （实际上数据里只有六个餐厅） #}
+                        <li>最火餐厅：融景餐厅</li>
+                        <li>热门会议厅：11个</li> {# 预约次数超过50#}
+                        <li>最火会议室：多功能厅</li>
+                        <li>旅游拓展项目：12种</li>
+                        <li>最火拓展：一天拓展</li>{# 预约次数超过50#}
+                        <li>最火支付方式：微信</li>
+                    </ul>
+                </div>
 
 
             </div>
@@ -89,35 +100,320 @@
             </div>
 
             <div class="cen-bottom rightTop border">
-
-
-                <div class="cen-bottom2 rightTop border">
                     <div class="title">不同支付方式消费金额情况</div>
-                    <div id="chart2" style="width: 400px; height: 250px;"></div>
-                </div>
+                    <div id="chart2" style="width: 800px; height: 250px;"></div>
+
+{#                <div class="cen-bottom2 rightTop border">#}
+{#                    #}
+{#                </div>#}
             </div>
 
 
         </div>
         <div class="center-right fr">
             <div class="right-top rightTop border">
-               <div class="title">餐厅人流量排名</div>
+               <div class="title">热门会议厅排名</div>
 
+                    <div class="echart wenzi">
+                                    <div class="gun">
+                                    <span>排名</span>
+                                    <span>会议厅名称</span>
+                                    <span>预约次数</span>
+                                </div>
+                                    <div id="FontScroll" class="myscroll">
+                                         <ul>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>1</b>
+            </span>
+            <span>多功能厅</span>
+            <span>721</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>2</b>
+            </span>
+            <span>金茂厅</span>
+            <span>683</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>3</b>
+            </span>
+            <span>山庄会议室</span>
+            <span>山庄会议室</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>4</b>
+            </span>
+            <span>山庄会议室</span>
+            <span>493</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>5</b>
+            </span>
+            <span>石燕厅</span>
+            <span>371</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>6</b>
+            </span>
+            <span>1号会议室</span>
+            <span>311</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>7</b>
+            </span>
+            <span>六号会议室</span>
+            <span>296</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>8</b>
+            </span>
+            <span>一号会议室</span>
+            <span>249</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>9</b>
+            </span>
+            <span>阳光厅</span>
+            <span>227</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>10</b>
+            </span>
+            <span>五号会议室</span>
+            <span>116</span>
 
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>11</b>
+            </span>
+            <span>贵宾厅</span>
+            <span>69</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>千人大会场</span>
+            <span>48</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>四号会议室</span>
+            <span>9</span>
+
+        </div>
+    </li>
+                                             <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>金茂5号会议室</span>
+            <span>7</span>
+
+        </div>
+    </li>
+
+</ul>
+
+                                    </div>
+                                </div>
 
             </div>
             <div class="right-cen border">
-                <div class="title">各平台占比</div>
-                <div class="right-cen-cent">
-                    <div id="chart2" class="allnav"></div>
+                <div class="title">餐厅人流量分布</div>
+                <div class="bottom-b">
+{#                    <div id="canting" class="allnav"></div>#}
+                    <div id="canting" style="width: 400px; height: 250px;"></div>
                 </div>
 
             </div>
             <div class="right-bottom rightTop border">
-                <div class="title">全球贸易国家城市排行</div>
-                <div class="chat">
-                    <div id="chart5" class="allnav"></div>
-                </div>
+                <div class="title">拓展项目排行排行</div>
+                  <div class="echart wenzi">
+                                    <div class="gun">
+                                    <span>排名</span>
+                                    <span>拓展项目</span>
+                                    <span>预约次数</span>
+                                </div>
+                                    <div id="FontScroll" class="myscroll">
+                                         <ul>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>1</b>
+            </span>
+            <span>一天拓展</span>
+            <span>5168</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>2</b>
+            </span>
+            <span>拓展</span>
+            <span>2259</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>3</b>
+            </span>
+            <span>半天拓展</span>
+            <span>269</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>4</b>
+            </span>
+            <span>两天拓展</span>
+            <span>260</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>5</b>
+            </span>
+            <span>新麦乐</span>
+            <span>196</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>6</b>
+            </span>
+            <span>精英拓展</span>
+            <span>178</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>7</b>
+            </span>
+            <span>一天半拓展</span>
+            <span>169</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>8</b>
+            </span>
+            <span>2天拓展</span>
+            <span>145</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>9</b>
+            </span>
+            <span>一日拓展</span>
+            <span>141</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>10</b>
+            </span>
+            <span>拓展培训</span>
+            <span>107</span>
+
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>11</b>
+            </span>
+            <span>培训</span>
+            <span>61</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>1天拓展</span>
+            <span>56</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>四号会议室</span>
+            <span>9</span>
+
+        </div>
+    </li>
+                                             <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>金茂5号会议室</span>
+            <span>7</span>
+
+        </div>
+    </li>
+
+</ul>
+
+                                    </div>
+                                </div>
 
             </div>
         </div>
@@ -283,7 +579,7 @@ option && myChart.setOption(option);
 
 <script src="../static/before/js/jquery.min.js"></script>
 <script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
-<script src="../static/before/js/echarts.js"></script>
+<script src="../static/before/js/test2.js"></script>
 <script src="../static/before/js/wodry.min.js"></script>
 <script src="../static/before/js/fontscroll.js"></script>
   <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>

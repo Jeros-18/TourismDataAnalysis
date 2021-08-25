@@ -114,6 +114,16 @@ def b():
     naturePerson(natu,num)
     return render_template("b.html",natu=natu,num=num)
 
+@app.route('/test2')
+def test2():
+    return render_template("test2.html")
+
+@app.route('/c')
+def c():
+
+    return render_template("c.html")
+
+
 # 各个景区的人流量
 def naturePerson(natu,num):
     wb = xlrd.open_workbook("templates/xls/团队预定订单旅游板块明细数据.xls")

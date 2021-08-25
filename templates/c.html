@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>地图分布动画特效</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="payNum2" style="width: 800px; height: 800px;"></div>
+
+   {#支付方式使用频率#}
+<script>
+var chartDom = document.getElementById('payNum2');
+var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+    title: {
+        text: '不同支付方式使用频率情况',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [
+                {value: 1987, name: '刷卡'},
+                {value: 838, name: '转账'},
+                {value: 2652, name: '微信'},
+                {value: 1910, name: '收银宝'},
+                {value: 97, name: '押金条'},
+                {value: 320, name: '现金'},
+                {value: 72, name: '招待签单'},
+                {value: 39, name: '抵消费签单'},
+                {value: 382, name: '定金'},
+                {value: 561, name: '支付宝'},
+
+                {value: 1749, name: 'Q支付'},
+                {value: 487, name: '中信全付通'},
+                {value: 158, name: '踩线'},
+
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+</script>
+
+
+</body>
+
+</html>

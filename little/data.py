@@ -48,7 +48,7 @@ def ww():
        lastNamedict.append(sortNamedict[i])
    print(lastNamedict)
 
-# 地图展示 省份-人流量
+# 地图展示 省份-人流量 [[[
 def map():
     province=[]
     nums=[]
@@ -66,7 +66,7 @@ def map():
         lastNamedict.append(fidata[i])
     print(lastNamedict)
 
-# 旅行社区排行榜
+# 旅行社区排行榜 [[[[
 def lxingshe():
    lastNamedict=[]
    wb = xlrd.open_workbook("../templates/xls/aaa.xls")
@@ -94,7 +94,7 @@ def lxingshe():
    print(lastNamedict)
 
 
-# 消费模块占比
+# 消费模块占比 [[[[
 def b():
     wb = xlrd.open_workbook("../templates/xls/团队结算明细.xls")
     ws = wb.sheet_by_index(0)
@@ -152,7 +152,15 @@ def payNum2():
          else:
             namedict.setdefault(items[4], 1)
 
+   payType=[]
+   num=[]
+   for i in namedict:
+        payType.append(i[0])
+        num.append(i[1])
+
    print(namedict)
+   print(payType)
+   print(num)
 
 
 # 不同支付方式消费金额情况
@@ -206,7 +214,7 @@ def hangPerson():
     lastNamedict = []
     for i in range(6):
         lastNamedict.append(sortNamedict[i])
-    # print(lastNamedict) #[('融景餐厅', 116211.0), ('金茂酒店', 33679.0), ('古堡餐厅', 15499.0), ('土菜馆', 13487.0), ('活鱼村', 9639.0), ('陶令餐厅', 6304.0)]
+    print(lastNamedict) #[('融景餐厅', 116211.0), ('金茂酒店', 33679.0), ('古堡餐厅', 15499.0), ('土菜馆', 13487.0), ('活鱼村', 9639.0), ('陶令餐厅', 6304.0)]
 
 # 会议室受欢迎程度---每个会议被预约了多少次
 def roomNum():
@@ -255,7 +263,7 @@ def roomMoney():
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
     print(sortNamedict)
 
-# 团队类型 占比 扇形图
+# 团队类型 占比 扇形图  [[[[
 def teamType():
     wb = xlrd.open_workbook("../templates/xls/团队类型.xls")
     sheet = wb.sheets()[0]
@@ -265,7 +273,7 @@ def teamType():
     paySort = sorted(payNum.items(), key=lambda payNum: payNum[1])
     print(paySort) # [('招待', 83), ('同行', 1447), ('散客班', 2062), ('总代', 23114), ('直客', 38830)]
 
-# 各个景区的人流量
+# 各个景区的人流量 [[[[[
 def naturePerson():
     wb = xlrd.open_workbook("../templates/xls/团队预定订单旅游板块明细数据.xls")
     ws = wb.sheet_by_index(0)
@@ -342,4 +350,4 @@ if __name__ == '__main__':
     # zz()
     # payMoney()
     # ww()
-    monbb();
+    hangPerson();

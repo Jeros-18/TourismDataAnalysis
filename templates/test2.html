@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <script src="static/assets/js/echarts.min.js"></script>
-      <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+ <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="http://cdn.zaixianke.com/china.js"></script>
+    <script src="../static/before/js/jquery.min.js"></script>
     <title>旅游数据分析</title>
      <link rel="stylesheet" href="../static/before/css/wodry.css">
     <link rel="stylesheet" href="../static/before/css/test2.css">
     <link rel="stylesheet" href="../static/before/css/public.css">
-<script src="../static/before/js/echarts.min.js"></script>
-    <script src="../static/before/js/jquery.min.js"></script>
+
     <script>
         $(function () {
             $('.myscroll').myScroll({
@@ -47,38 +48,14 @@
     <div class="center">
         <div class="center-left fl">
             <div class="left-top rightTop border">
-                <!--<h1 id="ceshi">数据可视化</h1>-->
-                <div class="title">基本信息</div>
+                <div class="title">餐厅人流量排名</div>
+
 
 
             </div>
             <div class="left-cen rightTop border">
-                <div class="title">不同支付方式消费金额情况</div>
-                <div id="chart2" style="width: 400px; height: 250px;"></div>
 
-            </div>
-            <div class="left-bottom rightTop border">
-{#                <div class="title">商品分类占比</div>#}
-                <div id="payNum2" style="width: 400px; height: 250px;"></div>
-{#                <div id="chart2"></div>#}
-            </div>
-        </div>
-        <div class="center-cen fl">
-            <div class="cen-top rightTop border">
-
-            </div>
-
-            <div class="cen-bottom rightTop border">
-                <div class="cen-bottom2 rightTop border">
-                                    <div class="title">月统计</div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="center-right fr">
-            <div class="right-top rightTop border">
-               <div class="title">餐厅人流量排名</div>
+<div class="title">餐厅人流量排名</div>
 
                 <ul class="company" id="ceshi">
 
@@ -97,6 +74,36 @@
                     <li class="wodryRX4">NO.5
                         活鱼村，人流量累计9639</li>
                 </ul>
+
+            </div>
+            <div class="left-bottom rightTop border">
+{#                <div class="title">商品分类占比</div>#}
+                <div id="payNum2" style="width: 400px; height: 250px;"></div>
+{#                <div id="chart2"></div>#}
+
+            </div>
+        </div>
+        <div class="center-cen fl">
+             <div class="cen-top rightTop border">
+                <div id="box22" style="width: 700px; height: 700px;"></div>
+            </div>
+
+            <div class="cen-bottom rightTop border">
+
+
+                <div class="cen-bottom2 rightTop border">
+                    <div class="title">不同支付方式消费金额情况</div>
+                    <div id="chart2" style="width: 400px; height: 250px;"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="center-right fr">
+            <div class="right-top rightTop border">
+               <div class="title">餐厅人流量排名</div>
+
+
 
             </div>
             <div class="right-cen border">
@@ -174,14 +181,113 @@ option && myChart.setOption(option);
 
 </script>
 
+<!-- 地图模块-消费金额 开始-->
+<script>
+        // 初始化echarts实例
+        var myEcharts = echarts.init(document.getElementById("box22"));
+        var option = {
+            title: {  //标题样式
+                text: '中国各省旅游人流量分布',
+                x: "center",
+                textStyle: {
+                    fontSize: 18,
+                    color: "blue"
+                },
+            },
+            tooltip: {  //这里设置提示框
+                trigger: 'item',  //数据项图形触发
+                backgroundColor: "red",  //提示框浮层的背景颜色。
+                //字符串模板(地图): {a}（系列名称），{b}（区域名称），{c}（合并数值）,{d}（无）
+                formatter: '地区：{b}<br/>人流量：{c}'
+            },
+            visualMap: {//视觉映射组件
+                top: 'center',
+                left: 'left',
+                min: 10,
+                max: 500000,
+                text: ['High', 'Low'],
+                realtime: false,  //拖拽时，是否实时更新
+                calculable: true,  //是否显示拖拽用的手柄
+                inRange: {
+                    color: ['lightskyblue', 'yellow', 'orangered']
+                }
+            },
+            series: [
+                {
+                    name: '人流量',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: false,//是否开启鼠标缩放和平移漫游
+                    itemStyle: {//地图区域的多边形 图形样式
+                        normal: {//是图形在默认状态下的样式
+                            label: {
+                                show: true,//是否显示标签
+                                textStyle: {
+                                    color: "black"
+                                }
+                            }
+                        },
+                        zoom: 1.5,  //地图缩放比例,默认为1
+                        emphasis: {//是图形在高亮状态下的样式,比如在鼠标悬浮或者图例联动高亮时
+                            label: { show: true }
+                        }
+                    },
+                    top: "3%",//组件距离容器的距离
+                    data: [
+
+                            { name: '湖南', value: 54148 },
+                        { name: '江西', value: 6854 },
+                        { name: '湖北', value: 1213 },
+                        { name: '河南', value: 495 },
+                        { name: '四川', value: 413 },
+                        { name: '广东', value: 344 },
+                        { name: '贵州', value: 233 },
+                        { name: '安徽', value: 216 },
+                        { name: '河北', value: 195 },
+
+                        { name: '陕西', value: 186 },
+                        { name: '江苏', value: 182 },
+                        { name: '福建', value: 172 },
+                        { name: '浙江', value: 159 },
+                        { name: '山东', value: 153 },
+                        { name: '甘肃', value: 109 },
+
+                        { name: '山西', value: 105 },
+                        { name: '辽宁', value: 97 },
+                        { name: '云南', value: 92 },
+                        { name: '吉林', value: 91 },
+                        { name: '青海', value: 48 },
+                        { name: '海南', value: 30 },
+
+                        { name: '新疆', value: 0 },
+                        { name: '西藏', value: 0 },
+                        { name: '内蒙古', value: 0 },
+                        { name: '黑龙江', value: 0 },
+                        { name: '宁夏', value: 0 },
+                        { name: '广西', value: 0 },
+                        { name: '北京', value: 0 },
+                        { name: '天津', value: 0 },
+                        { name: '重庆', value: 0 },
+
+
+
+
+                    ]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myEcharts.setOption(option);
+    </script>
+ <!-- 地图模块-消费金额 结束-->
 
 <script src="../static/before/js/jquery.min.js"></script>
 <script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+<script src="../static/before/js/echarts.js"></script>
 <script src="../static/before/js/wodry.min.js"></script>
 <script src="../static/before/js/fontscroll.js"></script>
-<script src="../static/before/js/test2.js"></script>
-<script src="../static/before/js/china.js"></script>
   <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="http://cdn.zaixianke.com/china.js"></script>
 <!--<script src="js/mymap.js"></script>-->
 <script>
     /*$('#ceshi').wodry({

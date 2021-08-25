@@ -517,6 +517,7 @@ $(function () {
         });
     }
 
+    // 男 女 分布
     function Gender() {
         var myChart = echarts.init(document.getElementById('Gender'));
         var symbols = [

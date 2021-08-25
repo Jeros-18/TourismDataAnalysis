@@ -2,7 +2,8 @@ import xlrd
 import xlwt
 from collections import Counter
 import pandas as pd
-
+from datetime import datetime
+from xlrd import xldate_as_tuple
 
 def a():
     workBook = xlrd.open_workbook('../templates/xls/团队结算明细.xls')
@@ -293,9 +294,52 @@ def naturePerson():
         lastNamedict.append(sortNamedict[i])
     print(lastNamedict)
 
+
+# 月消费额
+def monthPay():
+    wb = xlrd.open_workbook('../templates/xls/团队结算支付明细.xls')
+    ws = wb.sheet_by_index(0)
+    # print(ws.row_values(0))  # 每一行作为一个列表
+    cols3 = ws.col_values(3)  # 获得第3列数据
+    print(cols3)
+    cols32 = xldate_as_tuple(cols3,1)
+    cols33 = datetime(*cols32).strftime('%y/%m')
+
+    c1=ws.cell(1,3).value #获取第2行第4列的内容
+    c2=xldate_as_tuple(c1,0)
+    c3=datetime(*c2).strftime('%y/%m')
+    # print(c3)
+
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+    # print(total_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[3] == None or items[3] == "PAY_DATE":
+            continue
+        else:
+            if items[3] in namedict.keys():
+                namedict[items[3]] += items[5]
+            else:
+                namedict.setdefault(items[3], items[5])
+    # print(namedict)
+
+    # print("-----------------sort-------------------")
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+    # print(sortNamedict)
+
+def monbb():
+    wb = xlrd.open_workbook('../templates/xls/团队结算支付明细.xls')
+    ws = wb.sheet_by_index(0)
+    c1 = ws.cell(1, 2).value
+    print(c1)
+
 if __name__ == '__main__':
     # payNum2();
     # zz()
     # payMoney()
     # ww()
-    payMoney();
+    monbb();

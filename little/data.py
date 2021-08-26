@@ -379,11 +379,77 @@ def tuoZhan():
         lastNamedict.append(sortNamedict[i])
     print(lastNamedict)
 
+# 融景餐厅 中午晚餐预定次数
+def rongjinNum():
+   wb = xlrd.open_workbook("../templates/xls/融景餐厅.xls")
+   ws = wb.sheet_by_index(0)
+   print(ws.row_values(0))  # 每一行作为一个列表
+   total_list = []
+   for row in range(ws.nrows):
+      row_list = ws.row_values(row)
+      total_list.append(row_list)
+
+   namedict = {}
+   for items in total_list:
+      if items[5] == None or items[5] == "FCATEGORY_NAME":
+         continue
+      else:
+         if items[5] in namedict.keys():
+            namedict[items[5]] += 1
+
+         else:
+            namedict.setdefault(items[5], 1)
+
+   print("融景餐厅",namedict)
+
+# 金茂酒店 中午晚餐预定次数
+def jinMao():
+   wb = xlrd.open_workbook("../templates/xls/金茂酒店.xls")
+   ws = wb.sheet_by_index(0)
+   print(ws.row_values(0))  # 每一行作为一个列表
+   total_list = []
+   for row in range(ws.nrows):
+      row_list = ws.row_values(row)
+      total_list.append(row_list)
+
+   namedict = {}
+   for items in total_list:
+      if items[5] == None or items[5] == "FCATEGORY_NAME":
+         continue
+      else:
+         if items[5] in namedict.keys():
+            namedict[items[5]] += 1
+
+         else:
+            namedict.setdefault(items[5], 1)
+
+   print("金茂酒店",namedict)
+
+# 古堡餐厅 中午晚餐预定次数
+def guBao():
+   wb = xlrd.open_workbook("../templates/xls/古堡餐厅.xls")
+   ws = wb.sheet_by_index(0)
+   print(ws.row_values(0))  # 每一行作为一个列表
+   total_list = []
+   for row in range(ws.nrows):
+      row_list = ws.row_values(row)
+      total_list.append(row_list)
+
+   namedict = {}
+   for items in total_list:
+      if items[5] == None or items[5] == "FCATEGORY_NAME":
+         continue
+      else:
+         if items[5] in namedict.keys():
+            namedict[items[5]] += 1
+
+         else:
+            namedict.setdefault(items[5], 1)
+
+   print("古堡餐厅",namedict)
+
+
 if __name__ == '__main__':
-    # payNum2();
-    # zz()
-    # payMoney()
-    # ww()
-    tuoZhan();
-    roomNum();
     hangPerson();
+    rongjinNum();
+    guBao();

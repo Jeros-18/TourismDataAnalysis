@@ -3,11 +3,11 @@ $(function () {
     /*ceshis();*/
     ceshis1();
     ceshis2();
-    // ceshis3();
-    ceshis4();
-    ceshis5();
-    ceshis6();
-    ceshis7();
+    // // ceshis3();
+    // ceshis4();
+    // ceshis5();
+    // ceshis6();
+    // ceshis7();
     pay();
 
 // 1 右2

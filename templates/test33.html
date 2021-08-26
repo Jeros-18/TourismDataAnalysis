@@ -1,17 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
 <head>
     <meta charset="UTF-8">
-     <script src="static/assets/js/echarts.min.js"></script>
+    <script src="static/assets/js/echarts.min.js"></script>
  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
     <script src="http://cdn.zaixianke.com/china.js"></script>
     <script src="../static/before/js/jquery.min.js"></script>
-    <title>旅游大数据展示</title>
+    <title>旅游数据分析</title>
      <link rel="stylesheet" href="../static/before/css/wodry.css">
-    <link rel="stylesheet" href="../static/before/css/index.css">
+    <link rel="stylesheet" href="../static/before/css/test33.css">
     <link rel="stylesheet" href="../static/before/css/public.css">
-
 
     <script>
         $(function () {
@@ -38,7 +36,7 @@
         <div class="header-left fl" id="time"></div>
         <div class="header-center fl">
             <div class="header-title">
-                旅游大数据展示
+                旅游数据分析
             </div>
             <div class="header-img"></div>
         </div>
@@ -48,72 +46,77 @@
     </div>
 
     <div class="center">
+{#        左边#}
         <div class="center-left fl">
             <div class="left-top rightTop border">
-                <!--<h1 id="ceshi">数据可视化</h1>-->
-                <div class="title">基本信息</div>
-                <div class="top-list">
-                    <p>生活不止眼前的苟且，还有诗和远方</p>
-                    <ul>
-                        <li>旅游大省：16个</li>
-                        <li>热门景区：30个</li>
-                        <li>热门旅行社：28个</li>
-                        <li>旅游团队类型：5种</li>
-                        <li>热门景区最大人流量：150319</li>
-                        <li>刷卡消费总额：19721339</li>
-                    </ul>
-                </div>
+                <div class="title">餐厅</div>
+
 
             </div>
             <div class="left-cen rightTop border">
-                <div class="title">人流量排名</div>
+
+                <div class="title">餐厅人流量</div>
 
                 <ul class="company" id="ceshi">
 
                     <li class="wodryRX0">
                         <span>NO.1</span>
-                        湖南省，人流量累计54148</li><br/>
+                        融景餐厅，人流量累计116211</li><br/>
                     <li class="wodryRX1">NO.2
-                        江西省，人流量累计6854</li>
+                        金茂酒店，人流量累计33679</li>
                     <br/>
                     <li class="wodryRX2">NO.3
-                        湖北省，人流量累计1213</li>
+                        古堡餐厅，人流量累计15499</li>
                     <br/>
                     <li class="wodryRX3">NO.4
-                        河南省，人流量累计495</li>
+                        土菜馆，人流量累计13487</li>
                     <br/>
                     <li class="wodryRX4">NO.5
-                        四川省，人流量累计413</li>
+                        活鱼村，人流量累计9639</li>
                 </ul>
 
             </div>
             <div class="left-bottom rightTop border">
-                <div class="title">旅游团队类型占比</div>
+                <div class="title">拓展训练项目</div>
+            </div>
+        </div>
+{#        中间#}
+        <div class="center-cen fl">
+             <div class="cen-top rightTop border">
+
+            </div>
+
+            <div class="cen-bottom rightTop border">
+                <div id="main1" style="width: 820px; height: 250px;"></div>
+            </div>
+            <div class="cen-bottom2 rightTop border">
+                    <div class="title">不同支付方式消费金额情况</div>
+            </div>
+
+
+        </div>
+
+{#        右边#}
+        <div class="center-right fr">
+            <div class="right-top rightTop border">
+
+            </div>
+            <div class="right-cen border">
                 <div class="bottom-b">
-                    <div id="chart3" class="allnav"></div>
+{#                    <div id="canting" class="allnav"></div>#}
+                    <div class="title">早午晚餐人流量</div>
+                    <div id="canPer" style="width: 500px; height: 250px;"></div>#}
+
                 </div>
 
             </div>
-        </div>
-        <div class="center-cen fl">
-           <div class="cen-top rightTop border">
-                <div id="box22" style="width: 700px; height: 700px;"></div>
-            </div>
-            <div class="cen-bottom rightTop border">
-                    <div class="title">不同支付方式消费金额情况</div>
-                    <div id="pay" style="width: 800px; height: 250px;"></div>
-            </div>
-
-        </div>
-        <div class="center-right fr">
-            <div class="right-top rightTop border">
-                <div class="title">旅行社人流量排行</div>
-
-                 <div class="echart wenzi">
+            <div class="right-bottom rightTop border">
+                <div class="title">拓展项目排行排行</div>
+                  <div class="echart wenzi">
                                     <div class="gun">
                                     <span>排名</span>
-                                    <span>旅行社名称</span>
-                                    <span>人流量</span>
+                                    <span>拓展项目</span>
+                                    <span>预约次数</span>
                                 </div>
                                     <div id="FontScroll" class="myscroll">
                                          <ul>
@@ -122,8 +125,8 @@
             <span>
                 <b>1</b>
             </span>
-            <span>湖南嗨周末国际</span>
-            <span>34865</span>
+            <span>一天拓展</span>
+            <span>5168</span>
         </div>
     </li>
     <li>
@@ -131,8 +134,8 @@
             <span>
                 <b>2</b>
             </span>
-            <span>长沙幸福时光国际</span>
-            <span>13523</span>
+            <span>拓展</span>
+            <span>2259</span>
         </div>
     </li>
     <li>
@@ -140,8 +143,8 @@
             <span>
                 <b>3</b>
             </span>
-            <span>湖南新麦乐国际</span>
-            <span>11692</span>
+            <span>半天拓展</span>
+            <span>269</span>
         </div>
     </li>
     <li>
@@ -149,8 +152,8 @@
             <span>
                 <b>4</b>
             </span>
-            <span>湖南益阳平安国际</span>
-            <span>8964</span>
+            <span>两天拓展</span>
+            <span>260</span>
         </div>
     </li>
     <li>
@@ -158,8 +161,8 @@
             <span>
                 <b>5</b>
             </span>
-            <span>株洲市火车头旅行社</span>
-            <span>6881</span>
+            <span>新麦乐</span>
+            <span>196</span>
         </div>
     </li>
     <li>
@@ -167,8 +170,8 @@
             <span>
                 <b>6</b>
             </span>
-            <span>岳阳宝中旅游国际</span>
-            <span>6811</span>
+            <span>精英拓展</span>
+            <span>178</span>
         </div>
     </li>
     <li>
@@ -176,8 +179,8 @@
             <span>
                 <b>7</b>
             </span>
-            <span>岳阳康辉国际</span>
-            <span>5387</span>
+            <span>一天半拓展</span>
+            <span>169</span>
         </div>
     </li>
     <li>
@@ -185,8 +188,8 @@
             <span>
                 <b>8</b>
             </span>
-            <span>湘潭潇湘风情</span>
-            <span>5101</span>
+            <span>2天拓展</span>
+            <span>145</span>
         </div>
     </li>
     <li>
@@ -194,8 +197,8 @@
             <span>
                 <b>9</b>
             </span>
-            <span>湖南湘聚天下国际</span>
-            <span>4966</span>
+            <span>一日拓展</span>
+            <span>141</span>
         </div>
     </li>
     <li>
@@ -203,8 +206,8 @@
             <span>
                 <b>10</b>
             </span>
-            <span>岳阳海航乐游国际</span>
-            <span>1169</span>
+            <span>拓展培训</span>
+            <span>107</span>
 
         </div>
     </li>
@@ -213,8 +216,8 @@
             <span>
                 <b>11</b>
             </span>
-            <span>湖南研学旅文化传媒</span>
-            <span>827</span>
+            <span>培训</span>
+            <span>61</span>
 
         </div>
     </li>
@@ -223,8 +226,28 @@
             <span>
                 <b>12</b>
             </span>
-            <span>衡阳市飞扬国际</span>
-            <span>798</span>
+            <span>1天拓展</span>
+            <span>56</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>四号会议室</span>
+            <span>9</span>
+
+        </div>
+    </li>
+                                             <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>金茂5号会议室</span>
+            <span>7</span>
 
         </div>
     </li>
@@ -234,162 +257,84 @@
                                     </div>
                                 </div>
 
-
-                            </div>
-                            <div class="right-cen border">
-                                <div class="title">消费板块占比</div>
-                                <div class="right-cen-cent">
-                                    <div id="chart2" class="allnav"></div>
-                                </div>
-
-                            </div>
-             <div class="right-top rightTop border">
-                             <div class="title">旅行景区人流量排行</div>
-
-                 <div class="echart wenzi">
-                                    <div class="gun">
-                                    <span>排名</span>
-                                    <span>旅行景区名称</span>
-                                    <span>人流量</span>
-                                </div>
-                                    <div id="FontScroll" class="myscroll">
-                                         <ul>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>1</b>
-            </span>
-            <span>石燕湖</span>
-            <span>150319</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>2</b>
-            </span>
-            <span>天空廊桥</span>
-            <span>天空廊桥</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>3</b>
-            </span>
-            <span>游船摆渡</span>
-            <span>105637</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>4</b>
-            </span>
-            <span>观光车</span>
-            <span>49889</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>5</b>
-            </span>
-            <span>空中漂流</span>
-            <span>34023</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>6</b>
-            </span>
-            <span>大门票</span>
-            <span>15970</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>7</b>
-            </span>
-            <span>长沙城表演</span>
-            <span>9344</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>8</b>
-            </span>
-            <span>妇女节半价票</span>
-            <span>5825</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>9</b>
-            </span>
-            <span>拓展体验游</span>
-            <span>4873</span>
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>10</b>
-            </span>
-            <span>飞索</span>
-            <span>3553</span>
-
-        </div>
-    </li>
-    <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>11</b>
-            </span>
-            <span>天空漂流</span>
-            <span>3358</span>
-
-        </div>
-    </li>
-     <li>
-        <div class="fontInner clearfix">
-            <span>
-                <b>12</b>
-            </span>
-            <span>龙舟</span>
-            <span>龙舟</span>
-
-        </div>
-    </li>
-
-</ul>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
             </div>
-                        </div>
-                    </div>
+        </div>
+    </div>
 
 
 </div>
-
-   <!-- 消费模块-消费金额 开始-->
+{#热门餐厅早午晚餐营业额#}
 <script>
-    var chartDom = document.getElementById('www');
+    var chartDom = document.getElementById('main1');
 var myChart = echarts.init(chartDom, 'dark');
 var option;
 
 option = {
     title: {
-        text: '团队主要消费分部情况',
-        subtext: '团队结算明细',
+        text: '热门餐厅早午晚餐营业额'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['古堡餐厅', '金茂酒店', '融景餐厅']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['早餐', '中餐', '晚餐']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: '古堡餐厅',
+            type: 'line',
+            stack: '总量',
+            data: [1180,12491,1828]
+        },
+        {
+            name: '金茂酒店',
+            type: 'line',
+            stack: '总量',
+            data: [16673, 10182, 6824]
+        },
+
+         {
+            name: '融景餐厅',
+            type: 'line',
+            stack: '总量',
+            data: [26447, 65517, 24244]
+        },
+
+    ]
+};
+
+option && myChart.setOption(option);
+
+</script>
+
+{#支付方式使用频率#}
+<script>
+var chartDom = document.getElementById('payNum2');
+var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+    title: {
+        text: '不同支付方式使用频率情况',
         left: 'center'
     },
     tooltip: {
@@ -401,18 +346,25 @@ option = {
     },
     series: [
         {
-            name: '业务模块',
+            name: '访问来源',
             type: 'pie',
             radius: '50%',
             data: [
-                {value: {{cateringTotal}}, name: '{{moduleName[0]}}'},
-                {value: {{guidTotal}}, name: '{{moduleName[1]}}'},
-                {value: {{hotelTotal}}, name: '{{moduleName[2]}}'},
-                {value: {{meetingTotal}}, name: '{{moduleName[3]}}'},
-                {value: {{otherTotal}}, name: '{{moduleName[4]}}'},
-                {value: {{partyTotal}}, name: '{{moduleName[5]}}'},
-                {value: {{ticketTotal}}, name: '{{moduleName[6]}}'},
-                {value: {{trainingTotal}}, name: '{{moduleName[7]}}'}
+                {value: 1987, name: '刷卡'},
+                {value: 838, name: '转账'},
+                {value: 2652, name: '微信'},
+                {value: 1910, name: '收银宝'},
+                {value: 97, name: '押金条'},
+                {value: 320, name: '现金'},
+                {value: 72, name: '招待签单'},
+                {value: 39, name: '抵消费签单'},
+                {value: 382, name: '定金'},
+                {value: 561, name: '支付宝'},
+
+                {value: 1749, name: 'Q支付'},
+                {value: 487, name: '中信全付通'},
+                {value: 158, name: '踩线'},
+
             ],
             emphasis: {
                 itemStyle: {
@@ -426,8 +378,8 @@ option = {
 };
 
 option && myChart.setOption(option);
+
 </script>
-  <!-- 消费模块-消费金额 结束-->
 
 <!-- 地图模块-消费金额 开始-->
 <script>
@@ -529,99 +481,9 @@ option && myChart.setOption(option);
     </script>
  <!-- 地图模块-消费金额 结束-->
 
-
- <!-- test 景区排行榜模块-消费金额 开始-->
- <script type="text/javascript">
-var dom = document.getElementById("main");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-option = {
-
-    color:['#3398DB'],
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'shadow'
-        }
-    },
-    grid: {
-        left: '3%',
-        right:'4%',
-        bottom:'3%',
-        containLabel:true
-    },
-    xAxis: {
-        type: 'category',
-        data: {{ AGENT_ACCOUNTNAME }}
-        <!--['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','999']-->
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [{
-        data: {{ MAN }},
-            <!--[120, 20, 150, 80, 70, 110, 130,200],-->
-        barWidth:'60%',
-        type:'bar'
-    }]
-};
-;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
-       </script>
- <!-- test 景区排行榜模块-消费金额 结束-->
- <!-- test 饼图模块-消费金额 开始-->
-<script>
-
-    var chartDom = document.getElementById('ffff');
-var myChart = echarts.init(chartDom);
-var option;
-
-option = {
-    title: {
-        text: '某站点用户访问来源',
-        subtext: '纯属虚构',
-        left: 'center'
-    },
-    tooltip: {
-        trigger: 'item'
-    },
-    legend: {
-        orient: 'vertical',
-        left: 'left',
-    },
-    series: [
-        {
-            name: '访问来源',
-            type: 'pie',
-            radius: '50%',
-            data: [
-                {value: 1048, name: '搜索引擎'},
-                {value: 735, name: '直接访问'},
-                {value: 580, name: '邮件营销'},
-                {value: 484, name: '联盟广告'},
-                {value: 300, name: '视频广告'}
-            ],
-            emphasis: {
-                itemStyle: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            }
-        }
-    ]
-};
-
-option && myChart.setOption(option);
-</script>
-<!-- test 饼图模块-消费金额 结束-->
-
 <script src="../static/before/js/jquery.min.js"></script>
 <script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
-<script src="../static/before/js/echarts.js"></script>
+<script src="../static/before/js/test33.js"></script>
 <script src="../static/before/js/wodry.min.js"></script>
 <script src="../static/before/js/fontscroll.js"></script>
   <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>

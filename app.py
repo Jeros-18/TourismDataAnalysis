@@ -122,6 +122,10 @@ def test2():
 def test3():
     return render_template("test3.html")
 
+@app.route('/test33')
+def test33():
+    return render_template("test33.html")
+
 @app.route('/test4')
 def test4():
     return render_template("test4.html")

@@ -1,54 +1,33 @@
 $(function () {
 
     /*ceshis();*/
-    ceshis1();
-    ceshis2();
-    // ceshis3();
-    ceshis4();
-    ceshis5();
-    ceshis6();
-    ceshis7();
-    pay();
+    canPer();
 
-// 1 右2
-    function ceshis1() {
-    var myChart = echarts.init(document.getElementById('chart2'));
+
+
+
+// 1 早午晚餐人流量
+    function canPer() {
+    var myChart = echarts.init(document.getElementById('canPer'));
 
     var ydata = [{
-        name: '旅游',
-        value: 6397906
+        name: '中餐',
+        value: 65517+10182+12491
     },
         {
-            name: '餐饮',
-            value: 5067667
+            name: '晚餐',
+            value: 24244+6824+1828
         },
         {
-            name: '培训',
-            value: 3219527
+            name: '早餐',
+            value: 26447+16673+1180
         },
-        {
-            name: '住宿',
-            value: 2434472
-        },
-        {
-            name: '其他',
-            value: 920166
-        },
-        {
-            name: '会议',
-            value: 658691
-        },
-        {
-            name: '晚会',
-            value: 235388
-        },
-        {
-            name: '导游',
-            value: 68050
-        }
+
+
+
     ];
-    var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
-    var xdata = ['旅游', "餐饮", "培训", "住宿", '其他', '会议', '晚会', '导游'];
+    var color = ["#8d7fec", "#5085f2", "#e75fc3"]
+    var xdata = ['中餐', "晚餐", "早餐"];
 
 
     option = {
@@ -183,9 +162,10 @@ $(function () {
         myChart.resize();
     });
 }
-    // 2 左3
-    function ceshis2() {
-    var myChart = echarts.init(document.getElementById('chart3'));
+
+    // 绿色饼图
+    function c() {
+    var myChart = echarts.init(document.getElementById('canting'));
 
     option = {
         /*backgroundColor: '#000',*/
@@ -221,7 +201,7 @@ $(function () {
             "bottom": "0",
             "padding": [15, 20],
             "itemGap": 5,
-            "data": ["招待", "同行", "电脑", "散客班", "总代", "直客"]
+            "data": ["融景餐厅", "金茂酒店", "古堡餐厅", "土菜馆", "活鱼村", "陶令餐厅"]
         },
         "series": [{
             "type": "pie",
@@ -312,20 +292,24 @@ $(function () {
                 }
             },
             "data": [{
-                "name": "招待",
-                "value": 83
+                "name": "融景餐厅",
+                "value": 116211
             }, {
-                "name": "同行",
-                "value": 1447
+                "name": "金茂酒店",
+                "value": 33679
             }, {
-                "name": "散客班",
-                "value": 2062
+                "name": "古堡餐厅",
+                "value": 15499
             }, {
-                "name": "总代",
-                "value": 23114
+                "name": "土菜馆",
+                "value": 13487
             }, {
-                "name": "直客",
-                "value": 38830
+                "name": "活鱼村",
+                "value": 9639
+            },
+            {
+                "name": "陶令餐厅",
+                "value": 6304
             }]
         }, {
             "type": "pie",
@@ -550,180 +534,6 @@ $(function () {
             myChart.resize();
         });
     }
-// 1 粉色饼图
-       function pay() {
-    var myChart = echarts.init(document.getElementById('pay'));
-
-    var ydata = [{
-        name: '刷卡',
-        value: 19721339
-    },
-        {
-            name: '转账',
-            value: 13872906.5
-        },
-        {
-            name: '微信',
-            value: 12299311
-        },
-        {
-            name: '收银宝',
-            value: 8377346.5
-        },
-        {
-            name: 'Q支付',
-            value: 8114259.5
-        },
-        {
-            name: '支付宝',
-            value: 2938239.5
-        },
-        {
-            name: '中信全付通',
-            value: 2423104
-        },
-        {
-            name: '定金',
-            value: 1148041
-        },
-
-    ];
-    var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
-    var xdata = ['刷卡', "转账", "微信", "收银宝", 'Q支付', '支付宝', '中信全付通', '定金'];
-
-
-    option = {
-        /*backgroundColor: "rgba(255,255,255,1)",*/
-        color: color,
-        legend: {
-            orient: "vartical",
-            x: "left",
-            top: "center",
-            left: "53%",
-            bottom: "0%",
-            data: xdata,
-            itemWidth: 8,
-            itemHeight: 8,
-            textStyle: {
-                color: '#fff'
-            },
-            /*itemGap: 16,*/
-            /*formatter:function(name){
-              var oa = option.series[0].data;
-              var num = oa[0].value + oa[1].value + oa[2].value + oa[3].value+oa[4].value + oa[5].value + oa[6].value + oa[7].value+oa[8].value + oa[9].value ;
-              for(var i = 0; i < option.series[0].data.length; i++){
-                  if(name==oa[i].name){
-                      return ' '+name + '    |    ' + oa[i].value + '    |    ' + (oa[i].value/num * 100).toFixed(2) + '%';
-                  }
-              }
-            }*/
-
-            formatter: function(name) {
-                return '' + name
-            }
-        },
-        series: [{
-            type: 'pie',
-            clockwise: false, //饼图的扇区是否是顺时针排布
-            minAngle: 2, //最小的扇区角度（0 ~ 360）
-            radius: ["20%", "60%"],
-            center: ["30%", "45%"],
-            avoidLabelOverlap: false,
-            itemStyle: { //图形样式
-                normal: {
-                    borderColor: '#ffffff',
-                    borderWidth: 1,
-                },
-            },
-            label: {
-                normal: {
-                    show: false,
-                    position: 'center',
-                    formatter: '{text|{b}}\n{c} ({d}%)',
-                    rich: {
-                        text: {
-                            color: "#fff",
-                            fontSize: 14,
-                            align: 'center',
-                            verticalAlign: 'middle',
-                            padding: 8
-                        },
-                        value: {
-                            color: "#8693F3",
-                            fontSize: 24,
-                            align: 'center',
-                            verticalAlign: 'middle',
-                        },
-                    }
-                },
-                emphasis: {
-                    show: true,
-                    textStyle: {
-                        fontSize: 24,
-                    }
-                }
-            },
-            data: ydata
-        }]
-    };
-    myChart.setOption(option);
-
-    setTimeout(function() {
-        myChart.on('mouseover', function(params) {
-            if (params.name == ydata[0].name) {
-                myChart.dispatchAction({
-                    type: 'highlight',
-                    seriesIndex: 0,
-                    dataIndex: 0
-                });
-            } else {
-                myChart.dispatchAction({
-                    type: 'downplay',
-                    seriesIndex: 0,
-                    dataIndex: 0
-                });
-            }
-        });
-
-        myChart.on('mouseout', function(params) {
-            myChart.dispatchAction({
-                type: 'highlight',
-                seriesIndex: 0,
-                dataIndex: 0
-            });
-        });
-        myChart.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: 0
-        });
-    }, 1000);
-
-    myChart.currentIndex = -1;
-
-    setInterval(function () {
-        var dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        myChart.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: myChart.currentIndex
-        });
-        myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
-        // 高亮当前图形
-        myChart.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: myChart.currentIndex
-        });
-    }, 1000);
-
-    // 使用刚指定的配置项和数据显示图表。
-    /*myChart.setOption(option);*/
-    window.addEventListener("resize",function(){
-        myChart.resize();
-    });
-}
     function ceshis4() {
         var myChart = echarts.init(document.getElementById('chart5'));
 
@@ -2092,179 +1902,6 @@ $(function () {
         });
     }
 
-function ceshis6() {
-    var myChart = echarts.init(document.getElementById('chart7'));
-
-    var ydata = [{
-        name: '刷卡',
-        value: 19721339
-    },
-        {
-            name: '转账',
-            value: 13872906.5
-        },
-        {
-            name: '微信',
-            value: 12299311
-        },
-        {
-            name: '收银宝',
-            value: 8377346.5
-        },
-        {
-            name: 'Q支付',
-            value: 8114259.5
-        },
-        {
-            name: '支付宝',
-            value: 2938239.5
-        },
-        {
-            name: '中信全付通',
-            value: 2423104
-        },
-        {
-            name: '定金',
-            value: 1148041
-        },
-
-    ];
-    var color = ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"]
-    var xdata = ['刷卡', "转账", "微信", "收银宝", 'Q支付', '支付宝', '中信全付通', '定金'];
-
-
-    option = {
-        /*backgroundColor: "rgba(255,255,255,1)",*/
-        color: color,
-        legend: {
-            orient: "vartical",
-            x: "left",
-            top: "center",
-            left: "53%",
-            bottom: "0%",
-            data: xdata,
-            itemWidth: 8,
-            itemHeight: 8,
-            textStyle: {
-                color: '#fff'
-            },
-            /*itemGap: 16,*/
-            /*formatter:function(name){
-              var oa = option.series[0].data;
-              var num = oa[0].value + oa[1].value + oa[2].value + oa[3].value+oa[4].value + oa[5].value + oa[6].value + oa[7].value+oa[8].value + oa[9].value ;
-              for(var i = 0; i < option.series[0].data.length; i++){
-                  if(name==oa[i].name){
-                      return ' '+name + '    |    ' + oa[i].value + '    |    ' + (oa[i].value/num * 100).toFixed(2) + '%';
-                  }
-              }
-            }*/
-
-            formatter: function(name) {
-                return '' + name
-            }
-        },
-        series: [{
-            type: 'pie',
-            clockwise: false, //饼图的扇区是否是顺时针排布
-            minAngle: 2, //最小的扇区角度（0 ~ 360）
-            radius: ["20%", "60%"],
-            center: ["30%", "45%"],
-            avoidLabelOverlap: false,
-            itemStyle: { //图形样式
-                normal: {
-                    borderColor: '#ffffff',
-                    borderWidth: 1,
-                },
-            },
-            label: {
-                normal: {
-                    show: false,
-                    position: 'center',
-                    formatter: '{text|{b}}\n{c} ({d}%)',
-                    rich: {
-                        text: {
-                            color: "#fff",
-                            fontSize: 14,
-                            align: 'center',
-                            verticalAlign: 'middle',
-                            padding: 8
-                        },
-                        value: {
-                            color: "#8693F3",
-                            fontSize: 24,
-                            align: 'center',
-                            verticalAlign: 'middle',
-                        },
-                    }
-                },
-                emphasis: {
-                    show: true,
-                    textStyle: {
-                        fontSize: 24,
-                    }
-                }
-            },
-            data: ydata
-        }]
-    };
-    myChart.setOption(option);
-
-    setTimeout(function() {
-        myChart.on('mouseover', function(params) {
-            if (params.name == ydata[0].name) {
-                myChart.dispatchAction({
-                    type: 'highlight',
-                    seriesIndex: 0,
-                    dataIndex: 0
-                });
-            } else {
-                myChart.dispatchAction({
-                    type: 'downplay',
-                    seriesIndex: 0,
-                    dataIndex: 0
-                });
-            }
-        });
-
-        myChart.on('mouseout', function(params) {
-            myChart.dispatchAction({
-                type: 'highlight',
-                seriesIndex: 0,
-                dataIndex: 0
-            });
-        });
-        myChart.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: 0
-        });
-    }, 1000);
-
-    myChart.currentIndex = -1;
-
-    setInterval(function () {
-        var dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        myChart.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: myChart.currentIndex
-        });
-        myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
-        // 高亮当前图形
-        myChart.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: myChart.currentIndex
-        });
-    }, 1000);
-
-    // 使用刚指定的配置项和数据显示图表。
-    /*myChart.setOption(option);*/
-    window.addEventListener("resize",function(){
-        myChart.resize();
-    });
-}
 
 
 

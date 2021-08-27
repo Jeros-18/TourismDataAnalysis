@@ -426,13 +426,17 @@
 {#支付方式使用频率#}
 <script>
 var chartDom = document.getElementById('payNum2');
-var myChart = echarts.init(chartDom, 'dark');
+var myChart = echarts.init(chartDom, '0bc4e9');
 var option;
 
 option = {
     title: {
         text: '不同支付方式使用频率情况',
-        left: 'center'
+        left: 'center',
+        textStyle:{
+                            {#fontSize: 18,//字体大小#}
+                            color: '#ffffff'//字体颜色
+                        },
     },
     tooltip: {
         trigger: 'item'
@@ -440,6 +444,10 @@ option = {
     legend: {
         orient: 'vertical',
         left: 'left',
+        textStyle:{
+                            {#fontSize: 18,//字体大小#}
+                            color: '#ffffff'//字体颜色
+                        },
     },
     series: [
         {

@@ -239,7 +239,8 @@
 {#        中间#}
         <div class="center-cen fl">
              <div class="cen-top rightTop border">
-                <div class="title">早中晚会议厅预约情况</div>
+{#                <div class="title">早中晚会议厅预约情况</div>#}
+                  <div id="main2" style="width: 820px; height: 250px;"></div>
             </div>
 
             <div class="cen-bottom rightTop border">
@@ -459,20 +460,20 @@ option = {
         {
             name: '古堡餐厅',
             type: 'line',
-            stack: '总量',
+            {#stack: '总量',#}
             data: [1180,12491,1828]
         },
         {
             name: '金茂酒店',
             type: 'line',
-            stack: '总量',
+            {#stack: '总量',#}
             data: [16673, 10182, 6824]
         },
 
          {
             name: '融景餐厅',
             type: 'line',
-            stack: '总量',
+            {#stack: '总量',#}
             data: [26447, 65517, 24244]
         },
 
@@ -482,7 +483,156 @@ option = {
 option && myChart.setOption(option);
 
 </script>
+{#早中晚会议厅预约情况#}
+<script>
+    var chartDom = document.getElementById('main2');
+var myChart = echarts.init(chartDom, '0bc4e9');
+{##0bc4e9#}
+var option;
 
+option = {
+
+    title: {
+        text: '早中晚会议厅预约情况',
+        textStyle:{
+                            {#fontSize: 18,//字体大小#}
+                            color: '#ffffff'//字体颜色
+                        },
+
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['多功能厅', '金茂厅', '山庄会议室'],
+        textStyle:{
+                            {#fontSize: 18,//字体大小#}
+                            color: '#ffffff'//字体颜色
+                        },
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['上午场', '下午场', '晚场'],
+        axisLabel : {
+                    textStyle: {
+                        color: '#ffffff'
+                    }
+                }
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel : {
+                    textStyle: {
+                        color: '#ffffff'
+                    }
+                }
+    },
+    series: [
+        {
+            name: '多功能厅',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [255,265,721],
+            color:'#FC9D9A'
+        },
+        {
+            name: '金茂厅',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [244, 267, 683],
+            color:'#EB6841' //改变折线颜色
+        },
+
+         {
+            name: '山庄会议室',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [232, 205, 611],
+             color:'#EDC951'
+
+        },
+
+    ]
+};
+
+option && myChart.setOption(option);
+
+</script>
+
+{#拓展#}
+<script>
+    var chartDom = document.getElementById('main3');
+var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+    title: {
+        text: '早中晚会议厅预约情况'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['多功能厅', '金茂厅', '山庄会议室']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['上午场', '下午场', '晚场']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: '多功能厅',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [255,265,721]
+        },
+        {
+            name: '金茂厅',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [244, 267, 683]
+        },
+
+         {
+            name: '山庄会议室',
+            type: 'line',
+            {#stack: '总量',#}
+            data: [232, 205, 611]
+        },
+
+    ]
+};
+
+option && myChart.setOption(option);
+
+</script>
 {#支付方式使用频率#}
 <script>
 var chartDom = document.getElementById('payNum2');

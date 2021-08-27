@@ -43,6 +43,7 @@ def ww():
 
    print("-----------------前30个-------------------")
    # 前20个
+   sortNamedict=[]
    lastNamedict = []
    for i in range(30):
        lastNamedict.append(sortNamedict[i])
@@ -216,57 +217,7 @@ def hangPerson():
         lastNamedict.append(sortNamedict[i])
     print(lastNamedict) #[('融景餐厅', 116211.0), ('金茂酒店', 33679.0), ('古堡餐厅', 15499.0), ('土菜馆', 13487.0), ('活鱼村', 9639.0), ('陶令餐厅', 6304.0)]
 
-# 会议室受欢迎程度---每个会议被预约了多少次
-def roomNum():
-    wb = xlrd.open_workbook("../templates/xls/团队预定订单会议板块明细数据.xls")
-    ws = wb.sheet_by_index(0)
-    print(ws.row_values(0))  # 每一行作为一个列表
-    total_list = []
-    for row in range(ws.nrows):
-        row_list = ws.row_values(row)
-        total_list.append(row_list)
 
-    namedict = {}
-    for items in total_list:
-        if items[3] == None or items[3] == "PAY_TYPE_NAME":
-            continue
-        else:
-            if items[3] in namedict.keys():
-                namedict[items[3]] += 1
-            else:
-                namedict.setdefault(items[3], 1)
-
-    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-
-    print(sortNamedict) # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
-    lastNamedict=[]
-    for i in range(12):
-      lastNamedict.append(sortNamedict[i])
-    print(lastNamedict)
-
-# 每个会议室的总营业额 有bug
-def roomMoney():
-    wb = xlrd.open_workbook('../templates/xls/团队预定订单会议板块明细数据.xls')
-    ws = wb.sheet_by_index(0)
-    # print(ws.row_values(0))  # 每一行作为一个列表
-    total_list = []
-    for row in range(ws.nrows):
-        row_list = ws.row_values(row)
-        total_list.append(row_list)
-    # print(total_list)
-
-    namedict = {}
-    for items in total_list:
-        if items[3] == None or items[3] == "ROOMNAME":
-            continue
-        else:
-            if items[3] in namedict.keys():
-                namedict[items[3]] += items[4]
-            else:
-                namedict.setdefault(items[3], items[4])
-
-    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-    print(sortNamedict)
 
 # 团队类型 占比 扇形图  [[[[
 def teamType():
@@ -350,11 +301,11 @@ def monbb():
     c1 = ws.cell(1, 2).value
     print(c1)
 
-# 拓展项目预约次数
-def tuoZhan():
+# 拓展场地预约次数
+def tuoZhanPosition():
     wb = xlrd.open_workbook("../templates/xls/团队预定订单拓展培训板块明细数据.xls")
     ws = wb.sheet_by_index(0)
-    print(ws.row_values(0))  # 每一行作为一个列表
+    # print(ws.row_values(0))  # 每一行作为一个列表
     total_list = []
     for row in range(ws.nrows):
         row_list = ws.row_values(row)
@@ -372,18 +323,23 @@ def tuoZhan():
 
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
 
-    print(
-        sortNamedict)  # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
+    print("拓展场地预约次数",sortNamedict)  # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
     lastNamedict = []
     for i in range(12):
         lastNamedict.append(sortNamedict[i])
-    print(lastNamedict)
+    print("拓展场地预约次数 前12",lastNamedict)
+# 拓展项目预约次数
+def tuoZanXiang():
+    wb = xlrd.open_workbook("../templates/xls/团队预定订单拓展培训板块明细数据.xls")
+    print("拓展项目预约次数", num(wb, n=6, name="TRAININGTYPENAME"))
 
-# 融景餐厅 中午晚餐预定次数
+
+
+# 融景餐厅 早午晚餐预定次数
 def rongjinNum():
    wb = xlrd.open_workbook("../templates/xls/融景餐厅.xls")
    ws = wb.sheet_by_index(0)
-   print(ws.row_values(0))  # 每一行作为一个列表
+   # print(ws.row_values(0))  # 每一行作为一个列表
    total_list = []
    for row in range(ws.nrows):
       row_list = ws.row_values(row)
@@ -400,9 +356,9 @@ def rongjinNum():
          else:
             namedict.setdefault(items[5], 1)
 
-   print("融景餐厅",namedict)
+   print("融景餐厅 早午晚餐预定次数",namedict)
 
-# 融景餐厅 中午晚餐人流量
+# 融景餐厅 早午晚餐人流量
 def rongjinPer():
    wb = xlrd.open_workbook("../templates/xls/融景餐厅.xls")
    ws = wb.sheet_by_index(0)
@@ -425,13 +381,13 @@ def rongjinPer():
 
    # print("-----------------sort-------------------")
    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-   print("融景餐厅",sortNamedict)
+   print("融景餐厅 早午晚餐人流量",sortNamedict)
 
-# 金茂酒店 中午晚餐预定次数
+# 金茂酒店 早午晚餐预定次数
 def jinMao():
    wb = xlrd.open_workbook("../templates/xls/金茂酒店.xls")
    ws = wb.sheet_by_index(0)
-   print(ws.row_values(0))  # 每一行作为一个列表
+   # print(ws.row_values(0))  # 每一行作为一个列表
    total_list = []
    for row in range(ws.nrows):
       row_list = ws.row_values(row)
@@ -448,9 +404,9 @@ def jinMao():
          else:
             namedict.setdefault(items[5], 1)
 
-   print("金茂酒店",namedict)
+   print("金茂酒店 早午晚餐预定次数",namedict)
 
-# 金茂酒店 中午晚餐人流量
+# 金茂酒店 早午晚餐人流量
 def jinMaoPer():
        wb = xlrd.open_workbook("../templates/xls/金茂酒店.xls")
        ws = wb.sheet_by_index(0)
@@ -473,13 +429,13 @@ def jinMaoPer():
 
        # print("-----------------sort-------------------")
        sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-       print("金茂酒店", sortNamedict)
+       print("金茂酒店 早午晚餐人流量", sortNamedict)
 
-# 古堡餐厅 中午晚餐预定次数
+# 古堡餐厅 早午晚餐预定次数
 def guBao():
    wb = xlrd.open_workbook("../templates/xls/古堡餐厅.xls")
    ws = wb.sheet_by_index(0)
-   print(ws.row_values(0))  # 每一行作为一个列表
+   # print(ws.row_values(0))  # 每一行作为一个列表
    total_list = []
    for row in range(ws.nrows):
       row_list = ws.row_values(row)
@@ -496,7 +452,7 @@ def guBao():
          else:
             namedict.setdefault(items[5], 1)
 
-   print("古堡餐厅",namedict)
+   print("古堡餐厅 早午晚餐预定次数",namedict)
 
 # 古堡餐厅 中午晚餐人流量
 def guBaoPer():
@@ -521,14 +477,200 @@ def guBaoPer():
 
        # print("-----------------sort-------------------")
        sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
-       print("古堡餐厅", sortNamedict)
+       print("古堡餐厅 早午晚餐人流量", sortNamedict)
+
+# 餐厅营业额
+def hangMoney():
+    wb = xlrd.open_workbook("../templates/xls/团队预定订单餐饮板块明细数据.xls")
+    ws = wb.sheet_by_index(0)
+    # print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[4] == None or items[4] == "FRESTAURANT_NAME":
+            continue
+        else:
+            if items[4] in namedict.keys():
+                namedict[items[4]] += items[6]
+            else:
+                namedict.setdefault(items[4], items[6])
+    # print(namedict)
+
+    # print("-----------------sort-------------------")
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+    print("餐厅营业额", sortNamedict)
 
 
+
+
+
+# 会议室受欢迎程度---每个会议被预约了多少次
+def roomNum():
+    wb = xlrd.open_workbook("../templates/xls/团队预定订单会议板块明细数据.xls")
+    ws = wb.sheet_by_index(0)
+    print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[3] == None or items[3] == "PAY_TYPE_NAME":
+            continue
+        else:
+            if items[3] in namedict.keys():
+                namedict[items[3]] += 1
+            else:
+                namedict.setdefault(items[3], 1)
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+
+    print(sortNamedict) # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
+    lastNamedict=[]
+    for i in range(12):
+      lastNamedict.append(sortNamedict[i])
+    print(lastNamedict)
+# 每个会议室的总营业额 有bug
+def roomMoney():
+    wb = xlrd.open_workbook('../templates/xls/团队预定订单会议板块明细数据.xls')
+    ws = wb.sheet_by_index(0)
+    # print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+    # print(total_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[3] == None or items[3] == "ROOMNAME":
+            continue
+        else:
+            if items[3] in namedict.keys():
+                namedict[items[3]] += items[4]
+            else:
+                namedict.setdefault(items[3], items[4])
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+    print(sortNamedict)
+# 会议厅 上午下午晚场营业额 有bug
+# 会议厅 上午下午晚场预约次数
+def roomTimeNum():
+    wb = xlrd.open_workbook("../templates/xls/团队预定订单会议板块明细数据.xls")
+    ws = wb.sheet_by_index(0)
+    print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[5] == None or items[5] == "SESSIONS":
+            continue
+        else:
+            if items[5] in namedict.keys():
+                namedict[items[5]] += 1
+            else:
+                namedict.setdefault(items[5], 1)
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+
+    print("会议厅 上午下午晚场预约次数",sortNamedict) # [('上午场', 1575), ('下午场', 1501), ('晚场', 1119), ('晚晚场', 16)]
+# 多功能厅 上午下午晚场预约次数
+def  duoGongTimeNum():
+    wb = xlrd.open_workbook("../templates/xls/多功能厅.xls")
+    ws = wb.sheet_by_index(0)
+    print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[3] == None or items[3] == "ROOMNAME":
+            continue
+        else:
+            if items[3] in namedict.keys():
+                namedict[items[3]] += 1
+            else:
+                namedict.setdefault(items[3], 1)
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+
+    print("会议厅 上午下午晚场预约次数", sortNamedict)
+# 金茂厅 上午下午晚场预约次数
+def jinMaoTimeNum():
+    a
+# 山庄会议室 上午下午晚场预约次数
+def shanZhuangTimeNum():
+    a
+
+# 上午场
+def amNum():
+    wb = xlrd.open_workbook("../templates/xls/上午场.xls")
+    n=3
+    name="ROOMNAME "
+    print("上午场各会议厅预约次数", num(wb,n,name)) #('多功能厅', 255), ('金茂厅', 244), ('山庄会议室', 232)
+
+#下午场
+def pmNum():
+    wb = xlrd.open_workbook("../templates/xls/下午场.xls")
+    n = 3
+    name = "ROOMNAME "
+    print("下午场各会议厅预约次数", num(wb, n,name)) # ('多功能厅', 265),[('金茂厅', 267),  ('山庄会议室', 205),
+# 晚场
+def wangNum():
+    wb = xlrd.open_workbook("../templates/xls/晚场.xls")
+    n = 3
+    name = "ROOMNAME "
+    print("晚场各会议厅预约次数", num(wb, n,name)) #  [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611)
+
+# 门票项目 预约游玩次数
+
+
+
+
+def num(wb,n,name):
+    ws = wb.sheet_by_index(0)
+    # print(ws.row_values(0))  # 每一行作为一个列表
+    total_list = []
+    for row in range(ws.nrows):
+        row_list = ws.row_values(row)
+        total_list.append(row_list)
+
+    namedict = {}
+    for items in total_list:
+        if items[n] == None or items[n] == name:
+            continue
+        else:
+            if items[n] in namedict.keys():
+                namedict[items[n]] += 1
+            else:
+                namedict.setdefault(items[n], 1)
+
+    sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
+    return sortNamedict
+# 拓展场地被预约次数
 if __name__ == '__main__':
-    # hangPerson();
-    # rongjinNum();
-    # jinMao();
-    # guBao();
-    rongjinPer();
-    jinMaoPer()
-    guBaoPer()
+    # print("餐厅----------------------------")
+    # hangMoney()
+    # rongjinNum()
+    # rongjinPer()
+    # jinMao()
+    # jinMaoPer()
+    # guBao()
+    # guBaoPer()
+    print("会议厅--------------------------")
+    amNum()
+    pmNum()
+    wangNum()
+    print("拓展项目--------------------------")
+    tuoZhanPosition()
+    tuoZanXiang()

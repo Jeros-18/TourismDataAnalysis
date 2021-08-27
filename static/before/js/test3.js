@@ -524,7 +524,7 @@ $(function () {
             "type": "pie",
             "center": ["50%", "40%"],
             "radius": ["20%", "43%"],
-            "color": ["#FEE449", "#00FFFF", "#00FFA8", "#9F17FF", "#FFE400", "#F76F01"],
+            "color": ["#FEE449", "#00FFFF", "#00FFA8", "#9F17FF", "#FFE400", "#FEE449"],
             "startAngle": 135,
             "labelLine": {
                 "normal": {

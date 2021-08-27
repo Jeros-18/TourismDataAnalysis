@@ -512,7 +512,7 @@ def hangMoney():
 def roomNum():
     wb = xlrd.open_workbook("../templates/xls/团队预定订单会议板块明细数据.xls")
     ws = wb.sheet_by_index(0)
-    print(ws.row_values(0))  # 每一行作为一个列表
+    # print(ws.row_values(0))  # 每一行作为一个列表
     total_list = []
     for row in range(ws.nrows):
         row_list = ws.row_values(row)
@@ -530,11 +530,11 @@ def roomNum():
 
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
 
-    print(sortNamedict) # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
+    print("会议厅被预约次数",sortNamedict) # [('多功能厅', 721), ('金茂厅', 683), ('山庄会议室', 611), ('香樟厅', 493), ('石燕厅', 371), ('1号会议室', 311), ('六号会议室', 296), ('一号会议室', 249), ('阳光厅', 227), ('五号会议室', 116), ('贵宾厅', 69), ('千人大会场', 48), ('四号会议室', 9), ('金茂5号会议室', 7), ('ROOMNAME', 1)]
     lastNamedict=[]
     for i in range(12):
       lastNamedict.append(sortNamedict[i])
-    print(lastNamedict)
+    print("会议厅被预约次数 前12",lastNamedict)
 # 每个会议室的总营业额 有bug
 def roomMoney():
     wb = xlrd.open_workbook('../templates/xls/团队预定订单会议板块明细数据.xls')
@@ -586,7 +586,7 @@ def roomTimeNum():
 def  duoGongTimeNum():
     wb = xlrd.open_workbook("../templates/xls/多功能厅.xls")
     ws = wb.sheet_by_index(0)
-    print(ws.row_values(0))  # 每一行作为一个列表
+    # print(ws.row_values(0))  # 每一行作为一个列表
     total_list = []
     for row in range(ws.nrows):
         row_list = ws.row_values(row)
@@ -604,7 +604,7 @@ def  duoGongTimeNum():
 
     sortNamedict = sorted(namedict.items(), key=lambda namedict: namedict[1], reverse=True)
 
-    print("会议厅 上午下午晚场预约次数", sortNamedict)
+    print("多功能厅 上午下午晚场预约次数", sortNamedict)
 # 金茂厅 上午下午晚场预约次数
 def jinMaoTimeNum():
     a
@@ -659,18 +659,22 @@ def num(wb,n,name):
     return sortNamedict
 # 拓展场地被预约次数
 if __name__ == '__main__':
-    # print("餐厅----------------------------")
-    # hangMoney()
-    # rongjinNum()
-    # rongjinPer()
-    # jinMao()
-    # jinMaoPer()
-    # guBao()
-    # guBaoPer()
+    print("餐厅----------------------------")
+    hangMoney()
+    rongjinNum()
+    rongjinPer()
+    jinMao()
+    jinMaoPer()
+    guBao()
+    guBaoPer()
     print("会议厅--------------------------")
+    roomNum()
     amNum()
     pmNum()
     wangNum()
+    # duoGongTimeNum()
+    # jinMaoTimeNum()
+    # shanZhuangTimeNum()
     print("拓展项目--------------------------")
     tuoZhanPosition()
     tuoZanXiang()

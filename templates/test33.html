@@ -51,7 +51,18 @@
             <div class="left-top rightTop border">
                 <div class="title">会议厅</div>
 
-
+                    <div class="top-list">
+                    <p>生活不止眼前的苟且，还有诗和远方</p>
+                    <ul>
+                        <li>多功能厅：721</li> {# 餐厅人流量在6000以上 （实际上数据里只有六个餐厅） #}
+                        <li>金茂厅：683</li>
+                        <li>山庄会议室：611</li> {# 预约次数超过50#}
+                        <li>香樟厅：493</li>
+                        <li>石燕厅：371</li>
+                        <li>1号会议室：311</li>{# 预约次数超过50#}
+                        <li>六号会议室：296</li>
+                    </ul>
+                </div>
 
             </div>
             <div class="left-cen rightTop border">
@@ -78,20 +89,164 @@
 
             </div>
             <div class="left-bottom rightTop border">
-                <div class="title">拓展训练项目</div>
+                <div class="title">拓展项目排行排行</div>
+                  <div class="echart wenzi">
+                                    <div class="gun">
+                                    <span>排名</span>
+                                    <span>拓展项目</span>
+                                    <span>预约次数</span>
+                                </div>
+                                    <div id="FontScroll" class="myscroll">
+                                         <ul>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>1</b>
+            </span>
+            <span>开营破冰</span>
+            <span>2536</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>2</b>
+            </span>
+            <span>丛林穿越</span>
+            <span>1832</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>3</b>
+            </span>
+            <span>真人CS镭战</span>
+            <span>1399</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>4</b>
+            </span>
+            <span>龙舟竞渡</span>
+            <span>1362</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>5</b>
+            </span>
+            <span>挑战150</span>
+            <span>1342</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>6</b>
+            </span>
+            <span>急速传真</span>
+            <span>776</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>7</b>
+            </span>
+            <span>毕业墙</span>
+            <span>558</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>8</b>
+            </span>
+            <span>动力圈</span>
+            <span>418</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>9</b>
+            </span>
+            <span>双解码</span>
+            <span>339</span>
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>10</b>
+            </span>
+            <span>镭战</span>
+            <span>247</span>
+
+        </div>
+    </li>
+    <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>11</b>
+            </span>
+            <span>仙人指路</span>
+            <span>231</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>夺宝奇兵</span>
+            <span>221</span>
+
+        </div>
+    </li>
+     <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>四号会议室</span>
+            <span>9</span>
+
+        </div>
+    </li>
+                                             <li>
+        <div class="fontInner clearfix">
+            <span>
+                <b>12</b>
+            </span>
+            <span>金茂5号会议室</span>
+            <span>7</span>
+
+        </div>
+    </li>
+
+</ul>
+
+                                    </div>
+                                </div>
             </div>
         </div>
 {#        中间#}
         <div class="center-cen fl">
              <div class="cen-top rightTop border">
-
+                <div class="title">早中晚会议厅预约情况</div>
             </div>
 
             <div class="cen-bottom rightTop border">
                 <div id="main1" style="width: 820px; height: 250px;"></div>
             </div>
             <div class="cen-bottom2 rightTop border">
-                    <div class="title">不同支付方式消费金额情况</div>
+                    <div class="title">最爆前三项目预约情况</div>
             </div>
 
 
@@ -100,7 +255,8 @@
 {#        右边#}
         <div class="center-right fr">
             <div class="right-top rightTop border">
-
+                 <div class="title">早午晚会议厅人流量</div>
+                <div id="meet" style="width: 400px; height: 200px;"></div>#}
             </div>
             <div class="right-cen border">
                 <div class="bottom-b">
@@ -112,11 +268,11 @@
 
             </div>
             <div class="right-bottom rightTop border">
-                <div class="title">拓展项目排行排行</div>
+                <div class="title">拓展场地排行排行</div>
                   <div class="echart wenzi">
                                     <div class="gun">
                                     <span>排名</span>
-                                    <span>拓展项目</span>
+                                    <span>拓展场地</span>
                                     <span>预约次数</span>
                                 </div>
                                     <div id="FontScroll" class="myscroll">

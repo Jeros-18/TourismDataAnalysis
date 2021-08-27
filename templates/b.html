@@ -1,69 +1,70 @@
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>地图分布动画特效</title>
-<style>
-	*{
-		margin: 0;
-		padding: 0;
-	}
-</style>
-    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>五分钟上手之折线图</title>
+          <!-- 引入 echarts.js -->
+ <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="../static/before/js/jquery.min.js"></script>
+     </head>
+     <body>
+          <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+          <div id="main" style="width: 600px;height:400px;"></div>
+          <script type="text/javascript">
 
-</head>
-<body>
-    <div id="main" style="width: 800px; height: 800px;"></div>
-
-    <script>
-        var chartDom = document.getElementById('main');
-var myChart = echarts.init(chartDom, 'dark');
-var option;
-
-option = {
+              // 基于准备好的dom，初始化echarts实例
+              var myChart = echarts.init(document.getElementById('main'));
+              // 指定图表的配置项和数据
+              myChart.setOption({
+                       title: {
+        text: '近七日收益'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
     legend: {
-        top: 'bottom'
+        data:['近七日收益']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
     },
     toolbox: {
-        show: true,
         feature: {
-            mark: {show: true},
-            dataView: {show: true, readOnly: false},
-            restore: {show: true},
-            saveAsImage: {show: true}
+            saveAsImage: {}
         }
     },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ["1","2","3","4","5"]
+    },
+    yAxis: {
+        type: 'value'
+    },
     series: [
+
         {
-            name: '面积模式',
-            type: 'pie',
-            radius: [50, 250],
-            center: ['50%', '50%'],
-            roseType: 'area',
-            itemStyle: {
-                borderRadius: 8
-            },
-            data: [
-                {value: {{ num[0] }}, name: '{{ natu[0] }}'},
-                {value: {{ num[1] }}, name: '{{ natu[1] }}'},
-                {value: {{ num[2] }}, name: '{{ natu[2] }}'},
-                {value: {{ num[3] }}, name: '{{ natu[2] }}'},
-                {value: {{ num[4] }}, name: '{{ natu[4] }}'},
-                {value: {{ num[5] }}, name: '{{ natu[5] }}'},
-                {value: {{ num[6] }}, name: '{{ natu[6] }}'},
-                {value: {{ num[7] }}, name: '{{ natu[7] }}'},
-                {value: {{ num[8] }}, name: '{{ natu[8] }}'},
-                {value: {{ num[9] }}, name: '{{ natu[9] }}'},
-                {value: {{ num[10] }}, name: '{{ natu[10] }}'},
-
-
-
-            ]
+            name:'近七日收益',
+            type:'line',
+            stack: '总量',
+            data:["1","2","3","4","5"]
         }
     ]
-};
-
-option && myChart.setOption(option);
-    </script>
-</body>
-
+              });
+              // 异步加载数据
+            /*  $.get('data.json').done(function (data) {
+                   // 填入数据
+                   myChart.setOption({ xAxis: { data: data.categories }, series: [{
+                        // 根据名字对应到相应的系列
+                        name: '销量',
+                        data: data.data
+                   }]
+                   });});*/
+          </script>
+     </body>
 </html>
+
+

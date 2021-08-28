@@ -130,10 +130,31 @@ def test33():
 def test4():
     return render_template("test4.html")
 
-@app.route('/c')
-def c():
+@app.route('/d')
+def d():
+    img_path = '/static/before/images/bg.png'
+    img_stream = return_img_stream(img_path)
+    return render_template('d.html',
+                           img_stream=img_stream)
 
-    return render_template("c.html")
+
+"""
+这是一个展示Flask如何读取服务器本地图片, 并返回图片流给前端显示的例子
+"""
+def return_img_stream(img_local_path):
+    """
+    工具函数:
+    获取本地图片流
+    :param img_local_path:文件单张图片的本地绝对路径
+    :return: 图片流
+    """
+    import base64
+    img_stream = ''
+    with open(img_local_path, 'r') as img_f:
+        img_stream = img_f.read()
+        img_stream = base64.b64encode(img_stream)
+    return img_stream
+
 
 
 # 各个景区的人流量

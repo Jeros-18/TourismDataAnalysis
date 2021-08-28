@@ -15,8 +15,8 @@ import numpy as np                      #矩阵运算
 import collections
 import re
 
-fn = open('../templates/txt/驴妈妈-喊泉.txt', 'r', encoding='utf-8')  # 打开文件
-img = Image.open('../templates/img/danGao.jpg')  # 打开遮罩图片
+fn = open('../templates/txt/美团-峡谷.txt', 'r', encoding='utf-8')  # 打开文件
+img = Image.open('../templates/img/img1.jpg')  # 打开遮罩图片
 
 
 string_data = fn.read()  # 读出整个文件
@@ -50,4 +50,4 @@ plt.imshow(wc)
 plt.axis('off')     #是否显示坐标轴
 
 # plt.show()    #显示生成的词云图片
-plt.savefig('../static/lmm.jpg', dpi=500)
+plt.savefig('../static/meiXiaGu.jpg', dpi=500)

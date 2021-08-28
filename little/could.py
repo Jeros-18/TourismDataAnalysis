@@ -53,7 +53,21 @@ def lmm3():
     img = Image.open('../templates/img/tree.jpg')  # 打开遮罩图片
     could(fn, img)
 
-
+# 美团
+def meiTuan():
+    wb = xlrd.open_workbook("../templates/xls/comment_美团.xls")
+    n = 1
+    name = "套餐"
+    print("美团 项目", num(wb, n, name))
+# 石燕湖景区悬崖秋千体验票
+def meiQiuQian():
+    a=1
+#  石燕湖景区晃桥体验票
+def meiHuangQiao():
+    a=1
+# 石燕湖地下峡谷漂流
+def meiXiaGu():
+    a=1
 
 
 
@@ -91,8 +105,6 @@ def could(fn,img):    # 读取文件
 
     # plt.show()    #显示生成的词云图片
 
-
-
 def num(wb,n,name):
     ws = wb.sheet_by_index(0)
     # print(ws.row_values(0))  # 每一行作为一个列表
@@ -116,4 +128,4 @@ def num(wb,n,name):
 
 
 if __name__ == '__main__':
-    lmm()
+    meiTuan()

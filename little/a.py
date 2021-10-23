@@ -50,4 +50,5 @@ plt.imshow(wc)
 plt.axis('off')     #是否显示坐标轴
 
 # plt.show()    #显示生成的词云图片
-plt.savefig('../static/meiXiaGu.jpg', dpi=500)
+plt.savefig('../static/meiXiaGu3.jpg', dpi=500)
+plt.show()
